@@ -7,6 +7,7 @@ name = "organizational-memory"
 version = "0.1.0"
 description = "Convert meetings, conversations, and notes into structured organizational memory."
 requires-python = ">=3.11"
+readme = "README.md"
 license = "MIT"
 authors = [{ name = "Aditya" }]
 keywords = [
