@@ -1,6 +1,6 @@
 """Tests for timestamp utilities."""
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 
@@ -14,11 +14,11 @@ from organizational_memory.utils.time import (
 def test_utc_now_is_timezone_aware() -> None:
     now = utc_now()
     assert now.tzinfo is not None
-    assert now.utcoffset() == timezone.utc.utcoffset(None)
+    assert now.utcoffset() == UTC.utcoffset(None)
 
 
 def test_format_timestamp_uses_z_suffix() -> None:
-    moment = datetime(2026, 6, 24, 9, 30, tzinfo=timezone.utc)
+    moment = datetime(2026, 6, 24, 9, 30, tzinfo=UTC)
     assert format_timestamp(moment) == "2026-06-24T09:30:00Z"
 
 
@@ -29,7 +29,7 @@ def test_format_timestamp_rejects_naive() -> None:
 
 def test_parse_timestamp_accepts_z_suffix() -> None:
     parsed = parse_timestamp("2026-06-24T09:30:00Z")
-    assert parsed == datetime(2026, 6, 24, 9, 30, tzinfo=timezone.utc)
+    assert parsed == datetime(2026, 6, 24, 9, 30, tzinfo=UTC)
 
 
 def test_parse_timestamp_assumes_utc_for_naive_input() -> None:

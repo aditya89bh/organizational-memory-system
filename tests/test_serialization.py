@@ -1,7 +1,7 @@
 """Tests for serialization helpers."""
 
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import Enum
 from pathlib import Path
 
@@ -29,7 +29,7 @@ class Sample:
 def _make_sample() -> Sample:
     return Sample(
         name="kickoff",
-        created_at=datetime(2026, 6, 24, 9, 0, tzinfo=timezone.utc),
+        created_at=datetime(2026, 6, 24, 9, 0, tzinfo=UTC),
         location=Path("/tmp/x"),
         priority=Priority.HIGH,
         tags=frozenset({"b", "a"}),
