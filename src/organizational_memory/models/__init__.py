@@ -3,7 +3,15 @@
 from organizational_memory.models.commitment import Commitment
 from organizational_memory.models.decision import Decision
 from organizational_memory.models.meeting import Meeting
+from organizational_memory.models.open_loop import OpenLoop
 from organizational_memory.models.participant import Participant
 from organizational_memory.models.task import Task
 
-__all__ = ["Commitment", "Decision", "Meeting", "Participant", "Task"]
+__all__ = [
+    "Commitment",
+    "Decision",
+    "Meeting",
+    "OpenLoop",
+    "Participant",
+    "Task",
+]
