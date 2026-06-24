@@ -1,6 +1,7 @@
 """Core organizational memory domain models."""
 
 from organizational_memory.models.action_item import ActionItem
+from organizational_memory.models.audit import AuditMetadata
 from organizational_memory.models.commitment import Commitment
 from organizational_memory.models.decision import Decision
 from organizational_memory.models.dependency import Dependency
@@ -61,6 +62,7 @@ from organizational_memory.models.timeline import (
 __all__ = [
     "ActionItem",
     "Assignment",
+    "AuditMetadata",
     "Commitment",
     "CommitmentId",
     "CommitmentStatus",
