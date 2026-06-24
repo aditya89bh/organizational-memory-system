@@ -45,3 +45,8 @@ Issues = "https://github.com/aditya89bh/organizational-memory-system/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
