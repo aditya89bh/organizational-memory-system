@@ -1,13 +1,18 @@
 """Tests for the Risk model."""
 
-from organizational_memory.models import Risk
+from organizational_memory.models import (
+    Likelihood,
+    Risk,
+    RiskStatus,
+    Severity,
+)
 
 
 def test_risk_defaults() -> None:
     risk = Risk(title="Vendor delay", description="Vendor may miss deadline")
-    assert risk.severity == "medium"
-    assert risk.likelihood == "medium"
-    assert risk.status == "identified"
+    assert risk.severity is Severity.MEDIUM
+    assert risk.likelihood is Likelihood.MEDIUM
+    assert risk.status is RiskStatus.IDENTIFIED
     assert risk.owner_id is None
 
 
@@ -15,15 +20,15 @@ def test_risk_full_construction() -> None:
     risk = Risk(
         title="Vendor delay",
         description="Vendor may miss deadline",
-        severity="high",
-        likelihood="low",
+        severity=Severity.HIGH,
+        likelihood=Likelihood.LOW,
         owner_id="alice",
-        status="mitigated",
+        status=RiskStatus.MITIGATED,
         source_meeting_id="m1",
         metadata={"vendor": "acme"},
     )
-    assert risk.severity == "high"
-    assert risk.status == "mitigated"
+    assert risk.severity is Severity.HIGH
+    assert risk.status is RiskStatus.MITIGATED
 
 
 def test_risk_serialization() -> None:

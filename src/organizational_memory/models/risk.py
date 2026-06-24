@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass, field
 
+from organizational_memory.models.enums import Likelihood, RiskStatus, Severity
 from organizational_memory.schemas import BaseRecord
 
 
@@ -22,9 +23,9 @@ class Risk(BaseRecord):
 
     title: str
     description: str
-    severity: str = "medium"
-    likelihood: str = "medium"
+    severity: Severity = Severity.MEDIUM
+    likelihood: Likelihood = Likelihood.MEDIUM
     owner_id: str | None = None
-    status: str = "identified"
+    status: RiskStatus = RiskStatus.IDENTIFIED
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)

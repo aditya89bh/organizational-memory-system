@@ -3,6 +3,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
+from organizational_memory.models.enums import DecisionStatus
 from organizational_memory.schemas import BaseRecord
 
 
@@ -26,6 +27,6 @@ class Decision(BaseRecord):
     owner_id: str | None = None
     rationale: str | None = None
     decided_at: datetime | None = None
-    status: str = "proposed"
+    status: DecisionStatus = DecisionStatus.PROPOSED
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)

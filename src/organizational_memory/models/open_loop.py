@@ -3,6 +3,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
+from organizational_memory.models.enums import OpenLoopStatus
 from organizational_memory.schemas import BaseRecord
 
 
@@ -24,7 +25,7 @@ class OpenLoop(BaseRecord):
 
     question: str
     owner_id: str | None = None
-    status: str = "open"
+    status: OpenLoopStatus = OpenLoopStatus.OPEN
     due_at: datetime | None = None
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)

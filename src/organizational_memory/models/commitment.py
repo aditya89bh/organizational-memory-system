@@ -3,6 +3,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
+from organizational_memory.models.enums import CommitmentStatus
 from organizational_memory.schemas import BaseRecord
 
 
@@ -25,6 +26,6 @@ class Commitment(BaseRecord):
     owner_id: str
     description: str
     due_at: datetime | None = None
-    status: str = "pending"
+    status: CommitmentStatus = CommitmentStatus.PENDING
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)

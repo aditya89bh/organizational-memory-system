@@ -2,12 +2,12 @@
 
 from datetime import UTC, datetime
 
-from organizational_memory.models import Decision
+from organizational_memory.models import Decision, DecisionStatus
 
 
 def test_decision_defaults() -> None:
     decision = Decision(title="Adopt CI", description="Use GitHub Actions")
-    assert decision.status == "proposed"
+    assert decision.status is DecisionStatus.PROPOSED
     assert decision.owner_id is None
     assert decision.decided_at is None
     assert decision.id
@@ -20,12 +20,12 @@ def test_decision_full_construction() -> None:
         owner_id="alice",
         rationale="Reduces manual toil",
         decided_at=datetime(2026, 6, 24, 9, 0, tzinfo=UTC),
-        status="accepted",
+        status=DecisionStatus.ACCEPTED,
         source_meeting_id="m1",
         metadata={"priority": "high"},
     )
     assert decision.owner_id == "alice"
-    assert decision.status == "accepted"
+    assert decision.status is DecisionStatus.ACCEPTED
 
 
 def test_decision_serialization() -> None:

@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass, field
 
+from organizational_memory.models.enums import DependencyStatus
 from organizational_memory.schemas import BaseRecord
 
 
@@ -22,5 +23,5 @@ class Dependency(BaseRecord):
     target_id: str
     dependency_type: str = "blocks"
     description: str | None = None
-    status: str = "pending"
+    status: DependencyStatus = DependencyStatus.PENDING
     metadata: dict[str, str] = field(default_factory=dict)

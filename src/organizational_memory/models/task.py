@@ -3,6 +3,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
+from organizational_memory.models.enums import Priority, TaskStatus
 from organizational_memory.schemas import BaseRecord
 
 
@@ -25,7 +26,7 @@ class Task(BaseRecord):
     description: str
     owner_id: str
     due_at: datetime | None = None
-    priority: str = "medium"
-    status: str = "todo"
+    priority: Priority = Priority.MEDIUM
+    status: TaskStatus = TaskStatus.TODO
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)

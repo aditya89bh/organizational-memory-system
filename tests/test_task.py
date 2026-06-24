@@ -2,13 +2,13 @@
 
 from datetime import UTC, datetime
 
-from organizational_memory.models import Task
+from organizational_memory.models import Priority, Task, TaskStatus
 
 
 def test_task_defaults() -> None:
     task = Task(title="Write docs", description="Draft the schema docs", owner_id="a")
-    assert task.priority == "medium"
-    assert task.status == "todo"
+    assert task.priority is Priority.MEDIUM
+    assert task.status is TaskStatus.TODO
     assert task.due_at is None
 
 
@@ -18,13 +18,13 @@ def test_task_full_construction() -> None:
         description="Draft the schema docs",
         owner_id="bob",
         due_at=datetime(2026, 7, 1, 12, 0, tzinfo=UTC),
-        priority="high",
-        status="in_progress",
+        priority=Priority.HIGH,
+        status=TaskStatus.IN_PROGRESS,
         source_meeting_id="m1",
         metadata={"epic": "docs"},
     )
-    assert task.priority == "high"
-    assert task.status == "in_progress"
+    assert task.priority is Priority.HIGH
+    assert task.status is TaskStatus.IN_PROGRESS
 
 
 def test_task_serialization() -> None:
@@ -32,3 +32,4 @@ def test_task_serialization() -> None:
     data = task.to_dict()
     assert data["title"] == "Write docs"
     assert data["priority"] == "medium"
+    assert data["status"] == "todo"
