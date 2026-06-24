@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organizational-memory"
+version = "0.1.0"
+description = "Convert meetings, conversations, and notes into structured organizational memory."
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Aditya" }]
+keywords = [
+    "organizational-memory",
+    "knowledge-management",
+    "meetings",
+    "decisions",
+    "tasks",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/aditya89bh/organizational-memory-system"
+Repository = "https://github.com/aditya89bh/organizational-memory-system"
+Issues = "https://github.com/aditya89bh/organizational-memory-system/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
