@@ -30,6 +30,11 @@ from organizational_memory.models.ownership import (
     OwnershipChange,
 )
 from organizational_memory.models.participant import Participant
+from organizational_memory.models.relationships import (
+    EntityRef,
+    EntityRelationship,
+    RelationshipType,
+)
 from organizational_memory.models.risk import Risk
 from organizational_memory.models.task import Task
 from organizational_memory.models.timeline import (
@@ -47,6 +52,8 @@ __all__ = [
     "Dependency",
     "DependencyStatus",
     "DiscussionTopic",
+    "EntityRef",
+    "EntityRelationship",
     "Likelihood",
     "Meeting",
     "MeetingMetadata",
@@ -60,6 +67,7 @@ __all__ = [
     "OwnershipChange",
     "Participant",
     "Priority",
+    "RelationshipType",
     "Risk",
     "RiskStatus",
     "Severity",
