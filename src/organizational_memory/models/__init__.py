@@ -6,6 +6,7 @@ from organizational_memory.models.decision import Decision
 from organizational_memory.models.dependency import Dependency
 from organizational_memory.models.discussion_topic import DiscussionTopic
 from organizational_memory.models.meeting import Meeting
+from organizational_memory.models.memory_event import MemoryEvent
 from organizational_memory.models.open_loop import OpenLoop
 from organizational_memory.models.participant import Participant
 from organizational_memory.models.risk import Risk
@@ -18,6 +19,7 @@ __all__ = [
     "Dependency",
     "DiscussionTopic",
     "Meeting",
+    "MemoryEvent",
     "OpenLoop",
     "Participant",
     "Risk",
