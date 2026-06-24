@@ -69,12 +69,24 @@ pytest
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete workflow and commit
 conventions.
 
+## Domain models
+
+The core domain models live in `organizational_memory.models` and represent
+meetings, participants, decisions, commitments, tasks, open loops, dependencies,
+risks, discussion topics, action items, and memory events. They are supported by
+string-valued status enumerations, ownership and audit metadata, relationship
+schemas, a timeline, and `persistence` helpers (`to_dict` / `from_dict`) for
+JSON-compatible conversion.
+
+See [docs/schemas.md](docs/schemas.md) for the full schema reference and example
+JSON objects.
+
 ## Roadmap
 
-- **Phase 1 — Foundation & project setup** *(current)*: packaging, configuration,
+- **Phase 1 — Foundation & project setup**: packaging, configuration,
   utilities, base schemas, tooling, and CI.
-- **Phase 2 — Domain model**: concrete schemas for decisions, commitments,
-  tasks, and open loops.
+- **Phase 2 — Domain model** *(current)*: concrete schemas for meetings,
+  decisions, commitments, tasks, open loops, and related records.
 - **Phase 3 — Ingestion**: parse source files into raw, normalized input.
 - **Phase 4 — Storage**: persist and retrieve structured records.
 - **Phase 5 — Recall & reporting**: query the memory and generate reports.
