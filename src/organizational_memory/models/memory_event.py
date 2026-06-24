@@ -6,6 +6,7 @@ from typing import Any
 
 from organizational_memory.schemas import BaseRecord
 from organizational_memory.utils.time import utc_now
+from organizational_memory.validation import require_non_empty
 
 
 @dataclass(kw_only=True)
@@ -29,3 +30,8 @@ class MemoryEvent(BaseRecord):
     actor_id: str | None = None
     payload: dict[str, Any] = field(default_factory=dict)
     metadata: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        require_non_empty(self.event_type, "event_type")
+        require_non_empty(self.entity_type, "entity_type")
+        require_non_empty(self.entity_id, "entity_id")

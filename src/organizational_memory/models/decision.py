@@ -5,6 +5,7 @@ from datetime import datetime
 
 from organizational_memory.models.enums import DecisionStatus
 from organizational_memory.schemas import BaseRecord
+from organizational_memory.validation import require_non_empty
 
 
 @dataclass(kw_only=True)
@@ -30,3 +31,7 @@ class Decision(BaseRecord):
     status: DecisionStatus = DecisionStatus.PROPOSED
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        require_non_empty(self.title, "title")
+        require_non_empty(self.description, "description")

@@ -5,6 +5,11 @@ from datetime import datetime
 
 from organizational_memory.models.enums import CommitmentStatus
 from organizational_memory.schemas import BaseRecord
+from organizational_memory.validation import (
+    require_non_empty,
+    require_owner,
+    validate_due_after,
+)
 
 
 @dataclass(kw_only=True)
@@ -29,3 +34,8 @@ class Commitment(BaseRecord):
     status: CommitmentStatus = CommitmentStatus.PENDING
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        require_owner(self.owner_id)
+        require_non_empty(self.description, "description")
+        validate_due_after(self.created_at, self.due_at)

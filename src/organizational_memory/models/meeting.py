@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 from organizational_memory.schemas import BaseRecord
+from organizational_memory.validation import require_non_empty, validate_time_range
 
 
 @dataclass(kw_only=True)
@@ -27,5 +28,5 @@ class Meeting(BaseRecord):
     metadata: dict[str, str] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
-        if self.ended_at is not None and self.ended_at < self.started_at:
-            raise ValueError("Meeting ended_at cannot be before started_at.")
+        require_non_empty(self.title, "title")
+        validate_time_range(self.started_at, self.ended_at)

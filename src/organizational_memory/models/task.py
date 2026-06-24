@@ -5,6 +5,11 @@ from datetime import datetime
 
 from organizational_memory.models.enums import Priority, TaskStatus
 from organizational_memory.schemas import BaseRecord
+from organizational_memory.validation import (
+    require_non_empty,
+    require_owner,
+    validate_due_after,
+)
 
 
 @dataclass(kw_only=True)
@@ -30,3 +35,9 @@ class Task(BaseRecord):
     status: TaskStatus = TaskStatus.TODO
     source_meeting_id: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        require_non_empty(self.title, "title")
+        require_non_empty(self.description, "description")
+        require_owner(self.owner_id)
+        validate_due_after(self.created_at, self.due_at)

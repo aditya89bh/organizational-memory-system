@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 
 import pytest
 
+from organizational_memory.exceptions import ValidationError
 from organizational_memory.models import Meeting
 
 
@@ -34,7 +35,7 @@ def test_meeting_with_participants_and_metadata() -> None:
 
 
 def test_meeting_rejects_invalid_time_range() -> None:
-    with pytest.raises(ValueError, match="ended_at cannot be before started_at"):
+    with pytest.raises(ValidationError, match="ended_at cannot be before started_at"):
         Meeting(
             title="Bad",
             started_at=_started(),

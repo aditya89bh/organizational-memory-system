@@ -3,6 +3,7 @@
 from dataclasses import dataclass, field
 
 from organizational_memory.schemas import BaseRecord
+from organizational_memory.validation import require_non_empty
 
 
 @dataclass(kw_only=True)
@@ -22,3 +23,6 @@ class Participant(BaseRecord):
     role: str | None = None
     organization: str | None = None
     metadata: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        require_non_empty(self.name, "name")

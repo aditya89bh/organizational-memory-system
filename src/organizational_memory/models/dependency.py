@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 
 from organizational_memory.models.enums import DependencyStatus
 from organizational_memory.schemas import BaseRecord
+from organizational_memory.validation import require_non_empty
 
 
 @dataclass(kw_only=True)
@@ -25,3 +26,7 @@ class Dependency(BaseRecord):
     description: str | None = None
     status: DependencyStatus = DependencyStatus.PENDING
     metadata: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        require_non_empty(self.source_id, "source_id")
+        require_non_empty(self.target_id, "target_id")
