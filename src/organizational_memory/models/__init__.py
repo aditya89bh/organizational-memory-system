@@ -32,6 +32,10 @@ from organizational_memory.models.ownership import (
 from organizational_memory.models.participant import Participant
 from organizational_memory.models.risk import Risk
 from organizational_memory.models.task import Task
+from organizational_memory.models.timeline import (
+    OrganizationalTimeline,
+    TimelineEntry,
+)
 
 __all__ = [
     "ActionItem",
@@ -51,6 +55,7 @@ __all__ = [
     "MemoryEvent",
     "OpenLoop",
     "OpenLoopStatus",
+    "OrganizationalTimeline",
     "OwnerRef",
     "OwnershipChange",
     "Participant",
@@ -60,4 +65,5 @@ __all__ = [
     "Severity",
     "Task",
     "TaskStatus",
+    "TimelineEntry",
 ]
