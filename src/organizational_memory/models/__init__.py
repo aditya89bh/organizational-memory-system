@@ -19,12 +19,18 @@ from organizational_memory.models.enums import (
 from organizational_memory.models.meeting import Meeting
 from organizational_memory.models.memory_event import MemoryEvent
 from organizational_memory.models.open_loop import OpenLoop
+from organizational_memory.models.ownership import (
+    Assignment,
+    OwnerRef,
+    OwnershipChange,
+)
 from organizational_memory.models.participant import Participant
 from organizational_memory.models.risk import Risk
 from organizational_memory.models.task import Task
 
 __all__ = [
     "ActionItem",
+    "Assignment",
     "Commitment",
     "CommitmentStatus",
     "Decision",
@@ -37,6 +43,8 @@ __all__ = [
     "MemoryEvent",
     "OpenLoop",
     "OpenLoopStatus",
+    "OwnerRef",
+    "OwnershipChange",
     "Participant",
     "Priority",
     "Risk",
