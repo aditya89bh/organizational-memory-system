@@ -17,6 +17,11 @@ from organizational_memory.models.enums import (
     TaskStatus,
 )
 from organizational_memory.models.meeting import Meeting
+from organizational_memory.models.meeting_metadata import (
+    MeetingMetadata,
+    MeetingSource,
+    MeetingType,
+)
 from organizational_memory.models.memory_event import MemoryEvent
 from organizational_memory.models.open_loop import OpenLoop
 from organizational_memory.models.ownership import (
@@ -40,6 +45,9 @@ __all__ = [
     "DiscussionTopic",
     "Likelihood",
     "Meeting",
+    "MeetingMetadata",
+    "MeetingSource",
+    "MeetingType",
     "MemoryEvent",
     "OpenLoop",
     "OpenLoopStatus",
