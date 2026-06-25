@@ -10,6 +10,7 @@ _EXAMPLES_DIR = Path(__file__).resolve().parents[1] / "examples" / "demos"
 _EXAMPLES = [
     "startup_meeting_demo.py",
     "sprint_planning_demo.py",
+    "board_meeting_demo.py",
 ]
 
 
