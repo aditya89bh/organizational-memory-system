@@ -11,6 +11,7 @@ _EXAMPLES = [
     "startup_meeting_demo.py",
     "sprint_planning_demo.py",
     "board_meeting_demo.py",
+    "organizational_timeline_demo.py",
 ]
 
 
