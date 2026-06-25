@@ -30,6 +30,9 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+organizational-memory = "organizational_memory.cli.main:main"
+
 [project.optional-dependencies]
 dev = [
     "build>=1.2",
