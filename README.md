@@ -3,6 +3,8 @@
 > Convert meetings, conversations, and notes into structured organizational
 > memory consisting of decisions, commitments, tasks, and open loops.
 
+New here? Start with the [repository walkthrough](docs/repository_walkthrough.md).
+
 ## Overview
 
 The Organizational Memory System ingests the unstructured records an
