@@ -121,6 +121,25 @@ with SQLiteStore("memory.db") as store:
 See [docs/persistence.md](docs/persistence.md) for the full storage reference,
 including snapshots, backups, and migrations.
 
+## Recall
+
+The `organizational_memory.recall` package retrieves records from the stores
+using **deterministic search and ranking** — no embeddings, LLMs, external APIs,
+or network calls. It provides keyword and per-record-type search, timeline and
+relationship search, recency/importance/ownership/composite ranking, explainable
+results, recall traces, pagination, a compact query parser, and conservative
+natural-language-like recall.
+
+```python
+from organizational_memory.recall import answer, parse_query, search_keywords
+
+results = answer(store, "What is still unresolved?")
+parsed = parse_query("type:decision owner:alice kubernetes")
+```
+
+See [docs/recall.md](docs/recall.md) for the full recall reference, including the
+query parser, ranking, explanations, traces, and limitations.
+
 ## Recall evaluation
 
 Recall quality is measured deterministically against a fixed fixture dataset.
@@ -145,9 +164,12 @@ design, metrics, fixture expectations, sample output, and limitations.
   commitments, tasks, open loops, and related records.
 - **Phase 3 — Information extraction**: deterministic, rule-based
   extraction of structured records from transcripts and notes.
-- **Phase 4 — Storage** *(current)*: persist and retrieve structured records via
+- **Phase 4 — Storage**: persist and retrieve structured records via
   JSON and SQLite stores, repositories, queries, snapshots, and backups.
-- **Phase 5 — Recall & reporting**: query the memory and generate reports.
+- **Phase 5 — Recall & query engine** *(current)*: deterministic search,
+  ranking, explanations, traces, pagination, query parsing, and
+  natural-language-like recall over the stored memory.
+- **Phase 6 — Reporting**: generate digests and reports across the memory.
 
 ## License
 
