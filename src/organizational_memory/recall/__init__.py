@@ -9,8 +9,20 @@ from organizational_memory.recall.engine import (
     RecallEngine,
     RecallResult,
 )
+from organizational_memory.recall.keyword_search import (
+    KeywordMatch,
+    extract_text_fields,
+    score_record,
+    search_keywords,
+    tokenize,
+)
 
 __all__ = [
+    "KeywordMatch",
     "RecallEngine",
     "RecallResult",
+    "extract_text_fields",
+    "score_record",
+    "search_keywords",
+    "tokenize",
 ]
