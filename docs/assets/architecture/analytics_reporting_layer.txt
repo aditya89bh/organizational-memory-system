@@ -1,0 +1,18 @@
+Analytics and reporting layer
+=============================
+
+store records
+   |
+   v
+[ analytics ] -- summary metrics, memory health,
+   |              bottlenecks, owner load, timelines
+   v
+[ report builders ] -- meeting, weekly, follow-up,
+   |                    decisions, commitments, open-loops,
+   |                    organizational-memory
+   v
+Report (title, generated_at, summary, sections, metadata)
+   |
+   +--> MarkdownExporter --> .md
+   +--> JSONExporter     --> .json
+   +--> CSVExporter      --> .csv

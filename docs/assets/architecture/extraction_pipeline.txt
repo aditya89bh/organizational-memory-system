@@ -1,0 +1,23 @@
+Extraction pipeline
+===================
+
+raw text
+   |
+   v
+[ normalize_text ] -- unicode, whitespace, bullets, timestamps
+   |
+   v
+[ segment / speaker turns ]
+   |
+   v
+[ extractors run in order ]
+   |  participant   decision   commitment   task
+   |  question      dependency risk         action_item   topic
+   v
+[ confidence filter + duplicate filter ]
+   |
+   v
+ExtractionResult
+   - participants, decisions, commitments, tasks
+   - open_loops, risks, action_items, dependencies
+   - topics, entities, segments, speaker_turns, traces

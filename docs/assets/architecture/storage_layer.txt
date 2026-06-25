@@ -1,0 +1,23 @@
+Storage layer
+=============
+
+           +-------------------+
+           |   MemoryStore     |  abstract interface
+           |  save_record      |
+           |  get_record       |
+           |  list_records     |
+           |  update_record    |
+           |  delete_record    |
+           |  query / clear    |
+           +---------+---------+
+                     |
+        +------------+------------+
+        v                         v
++----------------+        +-----------------+
+|   JSONStore    |        |   SQLiteStore   |
+| single .json   |        | single .db file |
+| sorted output  |        | indexed tables  |
++----------------+        +-----------------+
+
+Records are encoded to type-tagged payloads and decoded back into
+typed domain models on read.

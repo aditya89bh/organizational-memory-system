@@ -1,0 +1,27 @@
+CLI flow
+========
+
+argv
+  |
+  v
+[ build_parser ] -- registers all subcommands
+  |
+  v
+[ parse_args ] -- selects a command + handler
+  |
+  v
++--------------------------------------------------+
+| command handlers                                 |
+|  ingest      recall      report     analytics    |
+|  commitments open-loops  export     config       |
+|  demo        benchmark                           |
++----------------------+---------------------------+
+                       |
+                       v
+              [ open store ] (json/sqlite)
+                       |
+                       v
+        run operation -> write_output (stdout/file)
+                       |
+                       v
+                 exit code (int)

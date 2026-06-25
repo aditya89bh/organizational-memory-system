@@ -1,0 +1,20 @@
+Recall layer
+============
+
+query string
+   |
+   v
+[ parse_query ] -- free text + key:value filters
+   |               (owner, status, type, priority,
+   |                severity, after, before, meeting)
+   v
+[ load records from store ]
+   |
+   v
+[ keyword search ] -- tokenize, match, score by coverage
+   |                   (+ exact phrase bonus)
+   v
+[ filter by parsed fields ]
+   |
+   v
+ranked RecallResult list  --(optional)--> pagination (limit/offset)
