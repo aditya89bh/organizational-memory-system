@@ -3,7 +3,8 @@
 > Convert meetings, conversations, and notes into structured organizational
 > memory consisting of decisions, commitments, tasks, and open loops.
 
-New here? Start with the [repository walkthrough](docs/repository_walkthrough.md).
+New here? Start with the [repository walkthrough](docs/repository_walkthrough.md),
+or browse the full [documentation index](docs/index.md).
 
 ## Overview
 
