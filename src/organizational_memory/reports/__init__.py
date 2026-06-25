@@ -15,6 +15,7 @@ from organizational_memory.reports.commitment_report import commitment_report
 from organizational_memory.reports.decision_report import decision_report
 from organizational_memory.reports.meeting_summary import meeting_summary
 from organizational_memory.reports.open_loop_report import open_loop_report
+from organizational_memory.reports.weekly_report import weekly_report
 
 __all__ = [
     "Report",
@@ -25,4 +26,5 @@ __all__ = [
     "json_safe",
     "meeting_summary",
     "open_loop_report",
+    "weekly_report",
 ]
