@@ -9,6 +9,7 @@ import argparse
 from organizational_memory.cli.commands import (
     analytics,
     commitments,
+    export,
     ingest,
     open_loops,
     recall,
@@ -24,3 +25,4 @@ def register_all(subparsers: argparse._SubParsersAction) -> None:  # type: ignor
     analytics.register(subparsers)
     commitments.register(subparsers)
     open_loops.register(subparsers)
+    export.register(subparsers)
