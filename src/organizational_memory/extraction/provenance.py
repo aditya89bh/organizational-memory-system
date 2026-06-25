@@ -7,6 +7,8 @@ audit traces) read these keys back into typed structures.
 
 from organizational_memory.extraction.segmentation import Segment
 
+UNATTRIBUTED_OWNER = "unattributed"
+
 EXTRACTOR_KEY = "extractor"
 MATCHED_PHRASE_KEY = "matched_phrase"
 SOURCE_LINE_KEY = "source_line"
