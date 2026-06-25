@@ -31,6 +31,13 @@ from organizational_memory.reports.templates import (
     weekly_review,
 )
 from organizational_memory.reports.timeline_report import timeline_report
+from organizational_memory.reports.visualizations import (
+    due_date_aging_table,
+    owner_workload_table,
+    render_table,
+    section_bars,
+    status_distribution_table,
+)
 from organizational_memory.reports.weekly_report import weekly_report
 
 __all__ = [
@@ -40,6 +47,7 @@ __all__ = [
     "accountability_report",
     "commitment_report",
     "decision_report",
+    "due_date_aging_table",
     "executive_summary",
     "follow_up_memo",
     "follow_up_report",
@@ -50,8 +58,12 @@ __all__ = [
     "open_loop_report",
     "open_loop_review",
     "organizational_memory_report",
+    "owner_workload_table",
     "participant_report",
+    "render_table",
+    "section_bars",
     "select_sections",
+    "status_distribution_table",
     "timeline_report",
     "weekly_report",
     "weekly_review",
