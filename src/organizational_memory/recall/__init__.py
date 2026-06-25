@@ -23,6 +23,11 @@ from organizational_memory.recall.keyword_search import (
     search_keywords,
     tokenize,
 )
+from organizational_memory.recall.natural_language import (
+    Interpretation,
+    answer,
+    interpret,
+)
 from organizational_memory.recall.open_loop_search import search_open_loops
 from organizational_memory.recall.pagination import Page, paginate
 from organizational_memory.recall.participant_search import search_participants
@@ -43,6 +48,7 @@ from organizational_memory.recall.traces import (
 __all__ = [
     "TIMELINE_TYPES",
     "Explanation",
+    "Interpretation",
     "KeywordMatch",
     "Page",
     "ParsedQuery",
@@ -51,9 +57,11 @@ __all__ = [
     "RecallTrace",
     "RecallTraceBuilder",
     "TraceStage",
+    "answer",
     "explain_result",
     "explain_results",
     "extract_text_fields",
+    "interpret",
     "paginate",
     "parse_query",
     "score_record",
