@@ -8,6 +8,7 @@ from organizational_memory.storage.json_store import JSONStore
 from organizational_memory.storage.meeting_repository import MeetingRepository
 from organizational_memory.storage.repository import Repository
 from organizational_memory.storage.sqlite_store import SQLiteStore
+from organizational_memory.storage.task_repository import TaskRepository
 from organizational_memory.storage.store import (
     RECORD_TYPES,
     MemoryStore,
@@ -26,6 +27,7 @@ __all__ = [
     "MemoryStore",
     "Repository",
     "SQLiteStore",
+    "TaskRepository",
     "decode_record",
     "encode_record",
     "record_type_name",
