@@ -81,6 +81,12 @@ from organizational_memory.analytics.trends import (
     TrendReport,
     trends,
 )
+from organizational_memory.analytics.visualizations import (
+    open_loop_aging_chart,
+    owner_load_chart,
+    render_bar_chart,
+    timeline_chart,
+)
 
 __all__ = [
     "AccountabilityReport",
@@ -119,11 +125,15 @@ __all__ = [
     "generate_report",
     "meeting_effectiveness",
     "memory_health",
+    "open_loop_aging_chart",
     "open_loop_metrics",
     "overdue_tasks",
+    "owner_load_chart",
     "ownership_metrics",
     "productivity",
+    "render_bar_chart",
     "repeated_discussions",
     "timeline_analytics",
+    "timeline_chart",
     "trends",
 ]
