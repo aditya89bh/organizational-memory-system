@@ -67,6 +67,11 @@ from organizational_memory.analytics.repeated_discussions import (
     RepeatedDiscussionReport,
     repeated_discussions,
 )
+from organizational_memory.analytics.reporting import (
+    AnalyticsReport,
+    build_dashboard_snapshot,
+    generate_report,
+)
 from organizational_memory.analytics.timeline_analytics import (
     TimelineAnalytics,
     timeline_analytics,
@@ -81,6 +86,7 @@ __all__ = [
     "AccountabilityReport",
     "AnalyticsCard",
     "AnalyticsDashboard",
+    "AnalyticsReport",
     "AnalyticsSection",
     "BottleneckReport",
     "CommitmentCompletionReport",
@@ -106,9 +112,11 @@ __all__ = [
     "TrendReport",
     "accountability",
     "bottlenecks",
+    "build_dashboard_snapshot",
     "commitment_completion",
     "decision_velocity",
     "dependency_analytics",
+    "generate_report",
     "meeting_effectiveness",
     "memory_health",
     "open_loop_metrics",
