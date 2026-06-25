@@ -45,6 +45,10 @@ class Repository(Generic[T]):
         """Delete the record with ``record_id``, returning whether it existed."""
         return self._store.delete_record(self._type_name, record_id)
 
+    def remove(self, record_id: str) -> None:
+        """Delete ``record_id``, raising if it does not exist."""
+        self._store.remove_record(self._type_name, record_id)
+
     def exists(self, record_id: str) -> bool:
         """Return whether a record with ``record_id`` exists."""
         return self.get(record_id) is not None

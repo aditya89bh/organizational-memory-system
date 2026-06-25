@@ -99,6 +99,19 @@ class MemoryStore(ABC):
     def clear(self) -> None:
         """Remove all records from the store."""
 
+    def remove_record(self, record_type: str, record_id: str) -> None:
+        """Delete a record, raising :class:`RecordNotFoundError` if absent."""
+        if not self.delete_record(record_type, record_id):
+            raise RecordNotFoundError(f"{record_type} {record_id} does not exist")
+
+    def delete_where(self, query: Query) -> int:
+        """Delete every record matching ``query`` and return the count removed."""
+        removed = 0
+        for record in self.query(query):
+            if self.delete_record(record_type_name(record), record.id):
+                removed += 1
+        return removed
+
     def query(self, query: Query) -> list[BaseRecord]:
         """Return records matching ``query``, applying ordering and paging.
 
