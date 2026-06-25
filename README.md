@@ -32,7 +32,7 @@ documents that are easy to write but hard to recall. This project treats
 organizational memory as a first-class, structured asset that can be ingested,
 stored, recalled, and reported on.
 
-## Architecture vision
+## Architecture
 
 The system is built from small, composable modules:
 
@@ -41,20 +41,23 @@ The system is built from small, composable modules:
 - **Schemas** — typed records for decisions, commitments, tasks, and open loops,
   all sharing a common base record (identity + timestamps + serialization).
 - **Storage** — persist and retrieve structured memory records.
-- **Recall & reporting** — answer questions about the memory and produce digests.
+- **Recall, analytics & reporting** — answer questions about the memory, compute
+  workflow metrics, and produce digests.
 
-This repository currently provides the foundation: configuration, environment
-loading, logging, an exception hierarchy, shared utilities (identifiers,
-timestamps, serialization), and the base record schema.
+The pipeline flows transcript → extraction → memory store → recall / analytics /
+reports → CLI. See [docs/architecture.md](docs/architecture.md) for text diagrams
+of every layer.
 
-## Planned features
+## Features
 
-- Ingest meetings, conversations, and notes from multiple file formats.
-- Extract and store decisions with rationale and context.
-- Track commitments and their owners.
-- Track tasks derived from conversations.
-- Track unresolved questions as open loops.
-- Recall and report across the accumulated organizational memory.
+- Ingest meetings, conversations, and notes from text and Markdown transcripts.
+- Extract decisions (with rationale), commitments, tasks, open loops,
+  participants, risks, action items, dependencies, and topics.
+- Persist memory in interchangeable JSON or SQLite stores.
+- Recall across the accumulated memory with a compact query language.
+- Compute workflow analytics (memory health, bottlenecks, owner load, and more).
+- Generate and export reports to Markdown, JSON, and CSV.
+- Drive everything from the `organizational-memory` command-line interface.
 
 ## Installation
 
@@ -68,6 +71,24 @@ For a development setup with linting, type checking, and tests:
 
 ```bash
 pip install -e ".[dev]"
+```
+
+## Quickstart
+
+```bash
+# Install
+pip install -e .
+
+# Ingest a transcript into a local JSON store
+organizational-memory ingest examples/transcripts/startup_product_meeting.txt \
+  --store memory.json --backend json
+
+# Recall and report
+organizational-memory recall "launch" --store memory.json
+organizational-memory report weekly --store memory.json --now 2026-03-01T00:00:00Z
+
+# Or run a self-contained demo
+organizational-memory demo startup
 ```
 
 ## Development
@@ -299,25 +320,60 @@ expected outputs, and limitations.
   analytics, commitments, open-loops, export, config, demo, benchmark), bundled
   example datasets, and reproducible end-to-end demos. See the
   [user guide](docs/user_guide.md) and [demos](docs/demos.md).
-- **Phase 9 — Production hardening** *(current)*: structured logging, local
+- **Phase 9 — Production hardening**: structured logging, local
   error reporting, configuration validation, coverage/benchmark/load/stress/fuzz
   tooling, package and release validation, and release documentation.
+- **Phase 10 — Release & showcase** *(current)*: repository walkthrough, case
+  studies, tutorials, documentation index, benchmark visualizations, release
+  notes, and the v0.1.0 release.
 
 For completed phases, remaining work, future ideas, and explicit non-goals, see
 the [roadmap](docs/roadmap.md).
 
-## Production hardening
+## Documentation
 
-Phase 9 adds release-oriented hardening and documentation:
+Start with the [documentation index](docs/index.md). Highlights:
 
+- [Repository walkthrough](docs/repository_walkthrough.md) — orientation.
+- [User guide](docs/user_guide.md) — full CLI reference.
 - [Architecture](docs/architecture.md) — text-only diagrams of the pipeline.
 - [API reference](docs/api_reference.md) — the public Python API.
-- [Security](docs/security.md) — local-only operation and known risks.
-- [Production readiness](docs/production_readiness.md) — what is ready and what
-  is local-only.
-- [Deployment](docs/deployment.md) — install, run, CI, and artifact verification.
-- [Testing](docs/testing.md) — coverage and benchmark tooling.
-- [Changelog](CHANGELOG.md) — phase-by-phase history.
+- [Case studies](docs/case_studies.md) — worked examples by meeting type.
+- [Examples gallery](docs/examples_gallery.md) — everything runnable.
+- [Security](docs/security.md) and
+  [production readiness](docs/production_readiness.md) — honest, scoped posture.
+- [Deployment](docs/deployment.md), [testing](docs/testing.md),
+  [roadmap](docs/roadmap.md), and the [changelog](CHANGELOG.md).
+
+## Testing
+
+The full suite is deterministic and runs locally with no network access:
+
+```bash
+ruff check .
+mypy .
+pytest
+```
+
+See [docs/testing.md](docs/testing.md) for coverage and benchmark tooling.
+
+## Limitations
+
+This is a **local, deterministic** toolkit, not a hosted service. It does **not**:
+
+- make any network calls, or use LLMs, embeddings, or external model APIs;
+- provide a server, authentication, or multi-user isolation;
+- encrypt store files at rest (protect them with filesystem permissions);
+- perform semantic recall — search is lexical (tokens and exact phrases).
+
+Extraction is rule-based and keys off cues like "we decided", "I will", "TODO:",
+"Risk:", and question marks. See
+[docs/production_readiness.md](docs/production_readiness.md) for the full posture.
+
+## Release status
+
+Current version: **v0.1.0**. See the
+[release notes](docs/releases/v0.1.0.md) and the [changelog](CHANGELOG.md).
 
 ## License
 
