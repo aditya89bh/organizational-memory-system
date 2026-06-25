@@ -1,0 +1,19 @@
+Meeting transcript to memory
+============================
+
+  meeting transcript (.txt / .md)
+        |
+        v
+  [ ingestion ] ------- load file, detect speakers, normalize text
+        |
+        v
+  [ extraction ] ------ rule-based extractors produce typed records
+        |
+        |   decisions     commitments   tasks
+        |   open_loops    risks         action_items
+        |   participants  dependencies  topics
+        v
+  [ stabilize + persist ] -- assign ids/timestamps, save to store
+        |
+        v
+  memory store (JSON / SQLite)

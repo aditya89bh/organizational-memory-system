@@ -47,6 +47,17 @@ The diagrams below are also available as plain-text files under
 
 See [`system_overview.txt`](assets/architecture/system_overview.txt).
 
+## Meeting transcript to memory
+
+```
+transcript -> ingestion -> extraction -> stabilize + persist -> memory store
+```
+
+A single meeting transcript flows through ingestion (load, detect speakers,
+normalize), extraction (rule-based typed records), and persistence (assign ids
+and timestamps, save). See
+[`transcript_to_memory.txt`](assets/architecture/transcript_to_memory.txt).
+
 ## Extraction pipeline
 
 ```
@@ -121,3 +132,17 @@ argv --> build_parser --> parse_args --> command handler
 
 The CLI registers every subcommand on a single parser and dispatches to the
 selected handler. See [`cli_flow.txt`](assets/architecture/cli_flow.txt).
+
+The same handlers power the bundled demos: each demo ingests fixed transcripts
+into an in-memory store and prints deterministic recall/analytics/report output.
+
+## Release validation flow
+
+```
+ruff -> mypy -> pytest -> build -> verify_package -> release tests -> tag v0.1.0
+```
+
+The release pipeline chains the quality gate, the build, package verification,
+and release validation (version consistency and an attribution scan) before the
+lightweight `v0.1.0` tag is created and pushed. See
+[`release_validation_flow.txt`](assets/architecture/release_validation_flow.txt).

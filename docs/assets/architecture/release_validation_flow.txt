@@ -1,0 +1,25 @@
+Release validation flow
+=======================
+
+  source tree
+      |
+      v
+  [ ruff check . ] ---- lint
+      |
+      v
+  [ mypy . ] ---------- strict type check
+      |
+      v
+  [ pytest ] ---------- deterministic test suite
+      |
+      v
+  [ python -m build ] - build sdist + wheel
+      |
+      v
+  [ verify_package.py ] -- imports, CLI, version, examples, docs, metadata
+      |
+      v
+  [ release validation tests ] -- version consistency + attribution scan
+      |
+      v
+  [ tag v0.1.0 ] ----- lightweight tag, then push main + tag
