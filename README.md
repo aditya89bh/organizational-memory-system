@@ -156,6 +156,26 @@ python scripts/run_recall_benchmarks.py
 See [docs/recall_evaluation.md](docs/recall_evaluation.md) for the benchmark
 design, metrics, fixture expectations, sample output, and limitations.
 
+## Analytics metrics
+
+The `organizational_memory.analytics` package turns persisted memory into
+**deterministic** workflow metrics — no LLMs, embeddings, external APIs, or
+network calls. It covers decision velocity, commitment completion, open loop
+aging, overdue work, ownership load, meeting effectiveness, repeated
+discussions, dependencies and bottlenecks, accountability, trends, timeline
+activity, productivity, and an overall memory health score.
+
+```python
+from organizational_memory.analytics import generate_report, memory_health
+
+report = generate_report(store)
+health = memory_health(store)
+print(health.score, health.grade)
+```
+
+See [docs/analytics_metrics.md](docs/analytics_metrics.md) for each metric, its
+formula, inputs, limitations, and example output.
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
