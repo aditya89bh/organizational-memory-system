@@ -47,6 +47,10 @@ from organizational_memory.analytics.ownership_metrics import (
     OwnershipReport,
     ownership_metrics,
 )
+from organizational_memory.analytics.productivity import (
+    ProductivityReport,
+    productivity,
+)
 from organizational_memory.analytics.repeated_discussions import (
     RepeatedCluster,
     RepeatedDiscussionReport,
@@ -77,6 +81,7 @@ __all__ = [
     "OverdueReport",
     "OwnerAccountability",
     "OwnershipReport",
+    "ProductivityReport",
     "RepeatedCluster",
     "RepeatedDiscussionReport",
     "TimelineAnalytics",
@@ -91,6 +96,7 @@ __all__ = [
     "open_loop_metrics",
     "overdue_tasks",
     "ownership_metrics",
+    "productivity",
     "repeated_discussions",
     "timeline_analytics",
     "trends",
