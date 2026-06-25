@@ -9,6 +9,7 @@ cleanly.
 import argparse
 from collections.abc import Sequence
 
+from organizational_memory.cli.commands import register_all
 from organizational_memory.version import __version__
 
 _PROG = "organizational-memory"
@@ -26,7 +27,8 @@ def build_parser() -> argparse.ArgumentParser:
         action="version",
         version=f"{_PROG} {__version__}",
     )
-    parser.add_subparsers(dest="command", metavar="<command>")
+    subparsers = parser.add_subparsers(dest="command", metavar="<command>")
+    register_all(subparsers)
     return parser
 
 
