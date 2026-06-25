@@ -20,6 +20,7 @@ from organizational_memory.recall.keyword_search import (
 )
 from organizational_memory.recall.open_loop_search import search_open_loops
 from organizational_memory.recall.participant_search import search_participants
+from organizational_memory.recall.relationship_search import search_relationships
 from organizational_memory.recall.task_search import search_tasks
 from organizational_memory.recall.timeline_search import (
     TIMELINE_TYPES,
@@ -39,6 +40,7 @@ __all__ = [
     "search_keywords",
     "search_open_loops",
     "search_participants",
+    "search_relationships",
     "search_tasks",
     "search_timeline",
     "timeline_timestamp",
