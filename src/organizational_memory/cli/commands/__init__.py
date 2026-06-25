@@ -6,7 +6,7 @@ wires every command into the top-level parser, keeping :mod:`cli.main` thin.
 
 import argparse
 
-from organizational_memory.cli.commands import ingest, recall, report
+from organizational_memory.cli.commands import analytics, ingest, recall, report
 
 
 def register_all(subparsers: argparse._SubParsersAction) -> None:  # type: ignore[type-arg]
@@ -14,3 +14,4 @@ def register_all(subparsers: argparse._SubParsersAction) -> None:  # type: ignor
     ingest.register(subparsers)
     recall.register(subparsers)
     report.register(subparsers)
+    analytics.register(subparsers)
