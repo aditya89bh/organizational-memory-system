@@ -11,6 +11,12 @@ from organizational_memory.storage.meeting_repository import MeetingRepository
 from organizational_memory.storage.open_loop_repository import OpenLoopRepository
 from organizational_memory.storage.query import Query, apply_query, matches
 from organizational_memory.storage.repository import Repository
+from organizational_memory.storage.snapshot import (
+    create_snapshot,
+    read_snapshot,
+    restore_snapshot,
+    write_snapshot,
+)
 from organizational_memory.storage.sqlite_store import SQLiteStore
 from organizational_memory.storage.store import (
     RECORD_TYPES,
@@ -40,9 +46,13 @@ __all__ = [
     "TaskRepository",
     "apply_query",
     "build_indexes",
+    "create_snapshot",
     "decode_record",
     "encode_record",
     "matches",
+    "read_snapshot",
     "record_type_name",
     "resolve_record_type",
+    "restore_snapshot",
+    "write_snapshot",
 ]
