@@ -293,6 +293,19 @@ expected outputs, and limitations.
 For completed phases, remaining work, future ideas, and explicit non-goals, see
 the [roadmap](docs/roadmap.md).
 
+## Production hardening
+
+Phase 9 adds release-oriented hardening and documentation:
+
+- [Architecture](docs/architecture.md) — text-only diagrams of the pipeline.
+- [API reference](docs/api_reference.md) — the public Python API.
+- [Security](docs/security.md) — local-only operation and known risks.
+- [Production readiness](docs/production_readiness.md) — what is ready and what
+  is local-only.
+- [Deployment](docs/deployment.md) — install, run, CI, and artifact verification.
+- [Testing](docs/testing.md) — coverage and benchmark tooling.
+- [Changelog](CHANGELOG.md) — phase-by-phase history.
+
 ## License
 
 Released under the [MIT License](LICENSE).
