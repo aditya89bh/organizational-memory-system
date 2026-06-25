@@ -121,6 +121,22 @@ with SQLiteStore("memory.db") as store:
 See [docs/persistence.md](docs/persistence.md) for the full storage reference,
 including snapshots, backups, and migrations.
 
+## Recall evaluation
+
+Recall quality is measured deterministically against a fixed fixture dataset.
+The benchmark harness in
+[`scripts/run_recall_benchmarks.py`](scripts/run_recall_benchmarks.py) runs a set
+of representative queries and reports hit rate and top-k accuracy, while
+`organizational_memory.recall.metrics` provides reusable metrics (hit rate,
+top-k hit rate, mean reciprocal rank, zero-result rate, average result count).
+
+```bash
+python scripts/run_recall_benchmarks.py
+```
+
+See [docs/recall_evaluation.md](docs/recall_evaluation.md) for the benchmark
+design, metrics, fixture expectations, sample output, and limitations.
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
