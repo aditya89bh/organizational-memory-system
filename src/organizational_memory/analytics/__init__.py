@@ -14,6 +14,11 @@ from organizational_memory.analytics.decision_velocity import (
     DecisionVelocityReport,
     decision_velocity,
 )
+from organizational_memory.analytics.meeting_effectiveness import (
+    MeetingEffectiveness,
+    MeetingEffectivenessReport,
+    meeting_effectiveness,
+)
 from organizational_memory.analytics.open_loop_metrics import (
     OpenLoopAge,
     OpenLoopReport,
@@ -32,6 +37,8 @@ from organizational_memory.analytics.ownership_metrics import (
 __all__ = [
     "CommitmentCompletionReport",
     "DecisionVelocityReport",
+    "MeetingEffectiveness",
+    "MeetingEffectivenessReport",
     "OpenLoopAge",
     "OpenLoopReport",
     "OverdueItem",
@@ -39,6 +46,7 @@ __all__ = [
     "OwnershipReport",
     "commitment_completion",
     "decision_velocity",
+    "meeting_effectiveness",
     "open_loop_metrics",
     "overdue_tasks",
     "ownership_metrics",
