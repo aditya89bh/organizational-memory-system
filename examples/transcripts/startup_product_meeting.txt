@@ -1,0 +1,13 @@
+Product Meeting - Beta Launch
+
+Attendees: Aditya, Priya, Rahul
+
+[10:00] Aditya: We decided to launch the closed beta next Friday.
+[10:02] Priya: I will prepare the onboarding documentation.
+[10:03] Rahul: I can take the load testing this week.
+[10:05] Aditya: What is our rollback plan if the beta fails?
+[10:06] Rahul: The launch is blocked by the pending security review.
+[10:08] Priya: Risk: the analytics vendor might miss the deadline.
+[10:10] Aditya: TODO: finalize the pricing page before launch.
+[10:11] Rahul: Next step: set up the staging environment.
+[10:12] Priya: Open question: who approves the final go/no-go?
