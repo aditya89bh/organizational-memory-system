@@ -20,8 +20,14 @@ from organizational_memory.recall.keyword_search import (
 )
 from organizational_memory.recall.participant_search import search_participants
 from organizational_memory.recall.task_search import search_tasks
+from organizational_memory.recall.timeline_search import (
+    TIMELINE_TYPES,
+    search_timeline,
+    timeline_timestamp,
+)
 
 __all__ = [
+    "TIMELINE_TYPES",
     "KeywordMatch",
     "RecallEngine",
     "RecallResult",
@@ -32,5 +38,7 @@ __all__ = [
     "search_keywords",
     "search_participants",
     "search_tasks",
+    "search_timeline",
+    "timeline_timestamp",
     "tokenize",
 ]
