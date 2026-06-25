@@ -218,6 +218,26 @@ See [docs/reporting_walkthrough.md](docs/reporting_walkthrough.md) for how to
 generate each report, export to Markdown/JSON/CSV, and the limitations. Sample
 outputs live under [docs/assets/](docs/assets/).
 
+## Demos
+
+The project ships with deterministic, runnable demos that exercise the full
+pipeline end to end (extraction → persistence → recall → analytics → reports),
+entirely in memory and with no external dependencies.
+
+```bash
+organizational-memory demo startup
+organizational-memory demo all
+```
+
+```python
+from organizational_memory.demos import run_demo
+
+lines = run_demo("company-memory")
+```
+
+See [docs/demos.md](docs/demos.md) for each demo, the bundled example datasets,
+expected outputs, and limitations.
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
