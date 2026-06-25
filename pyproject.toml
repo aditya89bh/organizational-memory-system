@@ -55,6 +55,24 @@ minversion = "8.0"
 testpaths = ["tests"]
 addopts = "-ra --strict-markers --strict-config"
 
+[tool.coverage.run]
+branch = true
+source = ["organizational_memory"]
+omit = ["*/__main__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+precision = 2
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+
+[tool.coverage.json]
+output = "coverage.json"
+
 [tool.ruff]
 line-length = 88
 target-version = "py311"
