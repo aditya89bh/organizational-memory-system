@@ -6,7 +6,9 @@ deterministic: the same report always produces identical output.
 """
 
 from organizational_memory.reports.exporters.base import ReportExporter
+from organizational_memory.reports.exporters.markdown import MarkdownExporter
 
 __all__ = [
+    "MarkdownExporter",
     "ReportExporter",
 ]
