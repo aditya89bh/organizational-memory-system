@@ -1,5 +1,9 @@
 """Deterministic, rule-based extraction of organizational memory records."""
 
+from organizational_memory.extraction.config import (
+    ExtractionConfig,
+    default_config,
+)
 from organizational_memory.extraction.normalization import (
     normalize_bullets,
     normalize_text,
@@ -25,11 +29,13 @@ from organizational_memory.extraction.speakers import (
 )
 
 __all__ = [
+    "ExtractionConfig",
     "ExtractionResult",
     "Segment",
     "SegmentKind",
     "SpeakerMatch",
     "SpeakerTurn",
+    "default_config",
     "match_speaker",
     "normalize_bullets",
     "normalize_text",

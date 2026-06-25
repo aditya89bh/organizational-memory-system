@@ -1,15 +1,27 @@
 """End-to-end deterministic extraction pipeline."""
 
 from dataclasses import dataclass, field
+from typing import TypeVar
 
 from organizational_memory.extraction.action_item_extractor import (
     extract_action_items,
 )
-from organizational_memory.extraction.audit import ExtractionTrace, build_traces
+from organizational_memory.extraction.audit import (
+    ExtractionTrace,
+    TraceableRecord,
+    build_traces,
+)
 from organizational_memory.extraction.commitment_extractor import (
     extract_commitments,
 )
-from organizational_memory.extraction.confidence import annotate_confidence
+from organizational_memory.extraction.confidence import (
+    MetadataRecord,
+    annotate_confidence,
+)
+from organizational_memory.extraction.config import (
+    ExtractionConfig,
+    default_config,
+)
 from organizational_memory.extraction.decision_extractor import extract_decisions
 from organizational_memory.extraction.dependency_extractor import (
     extract_dependencies,
@@ -25,6 +37,10 @@ from organizational_memory.extraction.errors import (
 from organizational_memory.extraction.normalization import normalize_text
 from organizational_memory.extraction.participant_extractor import (
     extract_participants,
+)
+from organizational_memory.extraction.provenance import (
+    CONFIDENCE_KEY,
+    SOURCE_LINE_KEY,
 )
 from organizational_memory.extraction.question_extractor import extract_questions
 from organizational_memory.extraction.risk_extractor import extract_risks
@@ -66,6 +82,20 @@ class ExtractionResult:
     traces: list[ExtractionTrace] = field(default_factory=list)
 
 
+_RecordT = TypeVar("_RecordT", bound=MetadataRecord)
+_TraceableT = TypeVar("_TraceableT", bound=TraceableRecord)
+
+_PRIMARY_FIELDS = ("name", "title", "question", "description")
+
+
+def _primary_text(record: object) -> str:
+    for attr in _PRIMARY_FIELDS:
+        value = getattr(record, attr, None)
+        if isinstance(value, str) and value.strip():
+            return value.strip().lower()
+    return ""
+
+
 def _as_transcript(source: Transcript | str) -> Transcript:
     if isinstance(source, Transcript):
         return source
@@ -76,8 +106,50 @@ def _as_transcript(source: Transcript | str) -> Transcript:
     )
 
 
-def run_extraction(source: Transcript | str) -> ExtractionResult:
+def _postprocess(
+    name: str,
+    records: list[_RecordT],
+    config: ExtractionConfig,
+) -> None:
+    """Apply enabled, confidence, and duplicate filtering to ``records``."""
+    if not config.is_enabled(name):
+        records.clear()
+        return
+    annotate_confidence(records)
+    kept: list[_RecordT] = []
+    seen: set[str] = set()
+    for record in records:
+        confidence = float(record.metadata.get(CONFIDENCE_KEY, "0"))
+        if confidence < config.min_confidence:
+            continue
+        if config.filter_duplicates:
+            source_line = record.metadata.get(SOURCE_LINE_KEY, "").lower()
+            fingerprint = f"{source_line}||{_primary_text(record)}"
+            if fingerprint in seen:
+                continue
+            seen.add(fingerprint)
+        kept.append(record)
+    records[:] = kept
+
+
+def _handle_group(
+    name: str,
+    records: list[_TraceableT],
+    config: ExtractionConfig,
+    result: "ExtractionResult",
+) -> int:
+    """Filter ``records`` and append their audit traces to ``result``."""
+    _postprocess(name, records, config)
+    result.traces.extend(build_traces(records))
+    return len(records)
+
+
+def run_extraction(
+    source: Transcript | str,
+    config: ExtractionConfig | None = None,
+) -> ExtractionResult:
     """Run the full deterministic extraction pipeline over ``source``."""
+    config = config or default_config()
     transcript = _as_transcript(source)
     if transcript.is_empty:
         raise EmptyTranscriptError("transcript has no extractable content")
@@ -97,18 +169,19 @@ def run_extraction(source: Transcript | str) -> ExtractionResult:
         topics=extract_topics(segments),
         entities=extract_entities(segments, text),
     )
-    record_groups = (
-        result.participants,
-        result.decisions,
-        result.commitments,
-        result.tasks,
-        result.open_loops,
-        result.dependencies,
-        result.risks,
-        result.action_items,
-        result.topics,
+    if not config.parse_dates:
+        result.entities.dates.clear()
+    total = (
+        _handle_group("participant_extractor", result.participants, config, result)
+        + _handle_group("decision_extractor", result.decisions, config, result)
+        + _handle_group("commitment_extractor", result.commitments, config, result)
+        + _handle_group("task_extractor", result.tasks, config, result)
+        + _handle_group("question_extractor", result.open_loops, config, result)
+        + _handle_group("dependency_extractor", result.dependencies, config, result)
+        + _handle_group("risk_extractor", result.risks, config, result)
+        + _handle_group("action_item_extractor", result.action_items, config, result)
+        + _handle_group("topic_extractor", result.topics, config, result)
     )
-    for records in record_groups:
-        annotate_confidence(records)
-        result.traces.extend(build_traces(records))
+    if config.strict and total == 0:
+        raise EmptyTranscriptError("strict mode: no records extracted")
     return result
