@@ -7,6 +7,10 @@ from organizational_memory.extraction.normalization import (
     shorten,
     strip_timestamps,
 )
+from organizational_memory.extraction.pipeline import (
+    ExtractionResult,
+    run_extraction,
+)
 from organizational_memory.extraction.segmentation import (
     Segment,
     SegmentKind,
@@ -21,6 +25,7 @@ from organizational_memory.extraction.speakers import (
 )
 
 __all__ = [
+    "ExtractionResult",
     "Segment",
     "SegmentKind",
     "SpeakerMatch",
@@ -30,6 +35,7 @@ __all__ = [
     "normalize_text",
     "normalize_whitespace",
     "parse_speaker_turns",
+    "run_extraction",
     "segment_text",
     "segment_transcript",
     "shorten",
