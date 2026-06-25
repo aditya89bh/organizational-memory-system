@@ -218,6 +218,26 @@ See [docs/reporting_walkthrough.md](docs/reporting_walkthrough.md) for how to
 generate each report, export to Markdown/JSON/CSV, and the limitations. Sample
 outputs live under [docs/assets/](docs/assets/).
 
+## Command-line interface
+
+Phase 8 makes the system usable from the terminal. Installing the package
+provides the `organizational-memory` command, which can ingest transcripts,
+recall memory, run analytics, generate and export reports, inspect commitments
+and open loops, manage local configuration, run demos, and run benchmarks — all
+locally and deterministically.
+
+```bash
+organizational-memory ingest meeting.txt --store memory.json --meeting-id sync-1
+organizational-memory recall "type:decision launch" --store memory.json --explain
+organizational-memory report follow-up --store memory.json --now 2026-03-01T00:00:00Z
+organizational-memory analytics --store memory.json --now 2026-03-01T00:00:00Z
+organizational-memory export json --store memory.json --output snapshot.json
+```
+
+See the [user guide](docs/user_guide.md) for every command and option, and the
+[interactive walkthrough](docs/interactive_walkthrough.md) for a full local
+workflow.
+
 ## Demos
 
 The project ships with deterministic, runnable demos that exercise the full
@@ -256,11 +276,16 @@ expected outputs, and limitations.
   work, ownership, meeting effectiveness, repeated discussions, dependencies,
   bottlenecks, accountability, trends, timeline activity, productivity, and an
   overall memory health score, with reports, dashboards, and visualizations.
-- **Phase 7 — Reports & organizational memory products** *(current)*:
+- **Phase 7 — Reports & organizational memory products**:
   deterministic report generation (meeting, decision, commitment, open-loop,
   weekly, monthly, timeline, participant, accountability, organizational memory,
   and follow-up reports), Markdown/JSON/CSV exporters, reusable templates, and
   text-only report visualizations.
+- **Phase 8 — CLI, integrations & demos** *(current)*: a local, deterministic
+  `organizational-memory` command-line interface (ingest, recall, report,
+  analytics, commitments, open-loops, export, config, demo, benchmark), bundled
+  example datasets, and reproducible end-to-end demos. See the
+  [user guide](docs/user_guide.md) and [demos](docs/demos.md).
 
 ## License
 
