@@ -24,6 +24,7 @@ from organizational_memory.recall.keyword_search import (
     tokenize,
 )
 from organizational_memory.recall.open_loop_search import search_open_loops
+from organizational_memory.recall.pagination import Page, paginate
 from organizational_memory.recall.participant_search import search_participants
 from organizational_memory.recall.relationship_search import search_relationships
 from organizational_memory.recall.task_search import search_tasks
@@ -42,6 +43,7 @@ __all__ = [
     "TIMELINE_TYPES",
     "Explanation",
     "KeywordMatch",
+    "Page",
     "RecallEngine",
     "RecallResult",
     "RecallTrace",
@@ -50,6 +52,7 @@ __all__ = [
     "explain_result",
     "explain_results",
     "extract_text_fields",
+    "paginate",
     "score_record",
     "search_commitments",
     "search_decisions",
