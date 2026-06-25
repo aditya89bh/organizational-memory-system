@@ -1,6 +1,7 @@
 """Persistence layer for organizational memory records."""
 
 from organizational_memory.storage.json_store import JSONStore
+from organizational_memory.storage.meeting_repository import MeetingRepository
 from organizational_memory.storage.repository import Repository
 from organizational_memory.storage.sqlite_store import SQLiteStore
 from organizational_memory.storage.store import (
@@ -15,6 +16,7 @@ from organizational_memory.storage.store import (
 __all__ = [
     "RECORD_TYPES",
     "JSONStore",
+    "MeetingRepository",
     "MemoryStore",
     "Repository",
     "SQLiteStore",
