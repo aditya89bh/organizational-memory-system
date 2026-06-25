@@ -9,23 +9,44 @@ network calls and uses no external models or APIs.
 
 ## [Unreleased]
 
-The current development line is the Phase 9 production-hardening work described
-below. No public package release has been published yet; the in-repo version is
-`0.1.0`.
+No unreleased changes. The current line is the v0.1.0 release described below.
+
+## [0.1.0] - 2026-06-25
+
+First tagged release. A complete local, deterministic organizational-memory
+toolkit. No network calls, no external models or embeddings.
 
 ### Added
 
-- Structured logging with JSON-safe log events.
-- Local, deterministic error reporting (no external service).
-- Configuration validation for store paths/types, CLI config files, extractor
-  names, report/export formats, and benchmark types.
-- Coverage reporting configuration and a deterministic coverage gate script.
-- Performance, memory, load, and stress benchmark scripts.
-- Profiling utilities (timer context manager and aggregate profile report).
-- Pseudo-fuzz tests, broader edge-case tests, package verification, and release
-  validation tests.
-- Security, architecture, API, roadmap, production-readiness, and deployment
-  documentation; updated contribution guide.
+- **Models.** Typed domain records for meetings, participants, decisions,
+  commitments, tasks, open loops, dependencies, risks, action items, topics, and
+  memory events, sharing a common base record with serialization helpers.
+- **Extraction.** Deterministic, rule-based extraction pipeline producing typed
+  records with confidence scores and audit traces.
+- **Storage.** `MemoryStore` interface with interchangeable JSON and SQLite
+  backends, repositories, queries, indexes, snapshots, backups, and migrations.
+- **Recall.** Compact query parser and lexical keyword search with coverage
+  scoring, an exact-phrase bonus, ranking, explanations, traces, and pagination.
+- **Analytics.** Memory health, bottlenecks, ownership load, decision velocity,
+  commitment completion, open-loop aging, overdue work, productivity, and
+  dashboards.
+- **Reports.** Typed report model with meeting, weekly, monthly, decision,
+  commitment, open-loop, follow-up, and organizational-memory reports, plus
+  Markdown/JSON/CSV exporters.
+- **CLI & demos.** The `organizational-memory` command-line interface (ingest,
+  recall, report, analytics, commitments, open-loops, export, config, demo,
+  benchmark), bundled datasets, and reproducible demos.
+- **Hardening.** Structured logging, local error reporting, configuration
+  validation, profiling utilities, and coverage/benchmark/load/stress/fuzz
+  tooling.
+- **Release & showcase.** Repository walkthrough, case studies, tutorials,
+  examples gallery, documentation index, benchmark visualizations, release notes,
+  release checklist, release validation and post-release verification scripts.
+
+### Notes
+
+- Lexical recall only; no semantic search, embeddings, or external model APIs.
+- Local-only: no server, authentication, or multi-user isolation.
 
 ## Phase summary
 
@@ -50,19 +71,22 @@ The project was built in phases. Each phase added one cohesive capability set.
 - **Phase 8 — CLI, integrations & demos.** `argparse`-based CLI, runnable demos,
   example datasets, and user-facing documentation.
 - **Phase 9 — Production hardening.** Observability, configuration validation,
-  benchmarking, expanded testing, and release documentation (this phase).
+  benchmarking, expanded testing, and release documentation.
+- **Phase 10 — Release & showcase.** Walkthrough, case studies, tutorials,
+  documentation index, benchmark visualizations, release notes/checklist,
+  release validation, and the v0.1.0 release.
 
 ## Current version notes
 
-- Version: `0.1.0` (pre-release, in active development).
+- Version: `0.1.0`.
 - Runtime requirements: Python >= 3.11, standard library only at runtime.
 - The CLI entry point is `organizational-memory`
   (`organizational_memory.cli.main:main`).
 
 ## Migration notes
 
-- No public releases have been made, so there are no upgrade migrations between
-  released versions yet.
-- Store files written by earlier phases remain compatible; the JSON and SQLite
+- v0.1.0 is the first tagged release, so there are no upgrade migrations from a
+  prior released version.
+- Store files written during development remain compatible; the JSON and SQLite
   store formats and snapshot/migration helpers introduced in Phase 4 are
-  unchanged by Phase 9.
+  unchanged.
