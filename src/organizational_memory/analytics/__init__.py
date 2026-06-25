@@ -14,10 +14,18 @@ from organizational_memory.analytics.decision_velocity import (
     DecisionVelocityReport,
     decision_velocity,
 )
+from organizational_memory.analytics.open_loop_metrics import (
+    OpenLoopAge,
+    OpenLoopReport,
+    open_loop_metrics,
+)
 
 __all__ = [
     "CommitmentCompletionReport",
     "DecisionVelocityReport",
+    "OpenLoopAge",
+    "OpenLoopReport",
     "commitment_completion",
     "decision_velocity",
+    "open_loop_metrics",
 ]
