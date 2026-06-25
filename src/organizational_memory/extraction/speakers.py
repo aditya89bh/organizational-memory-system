@@ -23,6 +23,43 @@ _SPEAKER_LINE = re.compile(
 )
 
 
+_RESERVED_LABELS = frozenset(
+    {
+        "action",
+        "actions",
+        "agenda",
+        "attendees",
+        "blocker",
+        "blockers",
+        "concern",
+        "concerns",
+        "decision",
+        "decisions",
+        "dependencies",
+        "dependency",
+        "next",
+        "note",
+        "notes",
+        "open",
+        "participants",
+        "recap",
+        "risk",
+        "risks",
+        "status",
+        "summary",
+        "task",
+        "tasks",
+        "tbd",
+        "todo",
+        "topic",
+        "topics",
+        "unresolved",
+        "update",
+        "updates",
+    }
+)
+
+
 @dataclass(frozen=True)
 class SpeakerMatch:
     """A speaker detection result for a single line of text."""
@@ -47,9 +84,12 @@ def match_speaker(line: str) -> SpeakerMatch | None:
     match = _SPEAKER_LINE.match(line)
     if match is None:
         return None
+    speaker = match.group("speaker").strip()
+    if " " not in speaker and speaker.lower() in _RESERVED_LABELS:
+        return None
     timestamp = match.group("timestamp")
     return SpeakerMatch(
-        speaker=match.group("speaker").strip(),
+        speaker=speaker,
         text=match.group("text").strip(),
         timestamp=timestamp.strip() if timestamp else None,
     )
