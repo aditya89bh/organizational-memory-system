@@ -281,11 +281,17 @@ expected outputs, and limitations.
   weekly, monthly, timeline, participant, accountability, organizational memory,
   and follow-up reports), Markdown/JSON/CSV exporters, reusable templates, and
   text-only report visualizations.
-- **Phase 8 — CLI, integrations & demos** *(current)*: a local, deterministic
+- **Phase 8 — CLI, integrations & demos**: a local, deterministic
   `organizational-memory` command-line interface (ingest, recall, report,
   analytics, commitments, open-loops, export, config, demo, benchmark), bundled
   example datasets, and reproducible end-to-end demos. See the
   [user guide](docs/user_guide.md) and [demos](docs/demos.md).
+- **Phase 9 — Production hardening** *(current)*: structured logging, local
+  error reporting, configuration validation, coverage/benchmark/load/stress/fuzz
+  tooling, package and release validation, and release documentation.
+
+For completed phases, remaining work, future ideas, and explicit non-goals, see
+the [roadmap](docs/roadmap.md).
 
 ## License
 
