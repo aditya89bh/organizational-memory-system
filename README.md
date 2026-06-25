@@ -24,6 +24,7 @@ stored, recalled, and reported on.
 The system is built from small, composable modules:
 
 - **Ingestion** — read supported source files and normalize them into raw input.
+- **Extraction** — deterministically extract structured records from transcripts.
 - **Schemas** — typed records for decisions, commitments, tasks, and open loops,
   all sharing a common base record (identity + timestamps + serialization).
 - **Storage** — persist and retrieve structured memory records.
@@ -81,13 +82,33 @@ JSON-compatible conversion.
 See [docs/schemas.md](docs/schemas.md) for the full schema reference and example
 JSON objects.
 
+## Extraction
+
+The `organizational_memory.extraction` package converts raw text and markdown
+transcripts into structured records using **deterministic, rule-based
+heuristics** — no LLMs, no external APIs, and no network calls. It parses
+speakers, segments the meeting, and extracts decisions, commitments, tasks,
+open loops, dependencies, risks, action items, participants, and topics, each
+annotated with a deterministic confidence score and an audit trace.
+
+```python
+from organizational_memory.extraction import run_extraction
+
+result = run_extraction("Aditya: We decided to ship on Friday.")
+print(result.decisions[0].title)
+```
+
+See [docs/extraction.md](docs/extraction.md) for the full extraction reference,
+configuration options, and known limitations.
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
   utilities, base schemas, tooling, and CI.
-- **Phase 2 — Domain model** *(current)*: concrete schemas for meetings,
-  decisions, commitments, tasks, open loops, and related records.
-- **Phase 3 — Ingestion**: parse source files into raw, normalized input.
+- **Phase 2 — Domain model**: concrete schemas for meetings, decisions,
+  commitments, tasks, open loops, and related records.
+- **Phase 3 — Information extraction** *(current)*: deterministic, rule-based
+  extraction of structured records from transcripts and notes.
 - **Phase 4 — Storage**: persist and retrieve structured records.
 - **Phase 5 — Recall & reporting**: query the memory and generate reports.
 
