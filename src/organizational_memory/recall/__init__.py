@@ -32,6 +32,11 @@ from organizational_memory.recall.timeline_search import (
     search_timeline,
     timeline_timestamp,
 )
+from organizational_memory.recall.traces import (
+    RecallTrace,
+    RecallTraceBuilder,
+    TraceStage,
+)
 
 __all__ = [
     "TIMELINE_TYPES",
@@ -39,6 +44,9 @@ __all__ = [
     "KeywordMatch",
     "RecallEngine",
     "RecallResult",
+    "RecallTrace",
+    "RecallTraceBuilder",
+    "TraceStage",
     "explain_result",
     "explain_results",
     "extract_text_fields",
