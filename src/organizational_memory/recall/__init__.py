@@ -18,6 +18,7 @@ from organizational_memory.recall.keyword_search import (
     search_keywords,
     tokenize,
 )
+from organizational_memory.recall.task_search import search_tasks
 
 __all__ = [
     "KeywordMatch",
@@ -28,5 +29,6 @@ __all__ = [
     "search_commitments",
     "search_decisions",
     "search_keywords",
+    "search_tasks",
     "tokenize",
 ]
