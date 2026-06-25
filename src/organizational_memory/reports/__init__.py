@@ -11,12 +11,14 @@ from organizational_memory.reports.base import (
     ReportTable,
     json_safe,
 )
+from organizational_memory.reports.decision_report import decision_report
 from organizational_memory.reports.meeting_summary import meeting_summary
 
 __all__ = [
     "Report",
     "ReportSection",
     "ReportTable",
+    "decision_report",
     "json_safe",
     "meeting_summary",
 ]
