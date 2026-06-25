@@ -4,6 +4,12 @@
 network calls, no external models. See the
 [release notes](docs/releases/v0.1.0.md).
 
+[![CI](https://github.com/aditya89bh/organizational-memory-system/actions/workflows/ci.yml/badge.svg)](https://github.com/aditya89bh/organizational-memory-system/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue)](docs/releases/v0.1.0.md)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Toolkit](https://img.shields.io/badge/local-deterministic-success)](docs/production_readiness.md)
+
 > Convert meetings, conversations, and notes into structured organizational
 > memory consisting of decisions, commitments, tasks, and open loops.
 
