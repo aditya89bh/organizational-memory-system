@@ -1,5 +1,12 @@
 """Persistence layer for organizational memory records."""
 
+from organizational_memory.storage.backup import (
+    backup_store,
+    latest_backup,
+    list_backups,
+    prune_backups,
+    restore_latest,
+)
 from organizational_memory.storage.commitment_repository import (
     CommitmentRepository,
 )
@@ -45,14 +52,19 @@ __all__ = [
     "SQLiteStore",
     "TaskRepository",
     "apply_query",
+    "backup_store",
     "build_indexes",
     "create_snapshot",
     "decode_record",
     "encode_record",
+    "latest_backup",
+    "list_backups",
     "matches",
+    "prune_backups",
     "read_snapshot",
     "record_type_name",
     "resolve_record_type",
+    "restore_latest",
     "restore_snapshot",
     "write_snapshot",
 ]
