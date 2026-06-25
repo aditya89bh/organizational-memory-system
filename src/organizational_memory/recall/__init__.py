@@ -11,6 +11,11 @@ from organizational_memory.recall.engine import (
     RecallEngine,
     RecallResult,
 )
+from organizational_memory.recall.explanations import (
+    Explanation,
+    explain_result,
+    explain_results,
+)
 from organizational_memory.recall.keyword_search import (
     KeywordMatch,
     extract_text_fields,
@@ -30,9 +35,12 @@ from organizational_memory.recall.timeline_search import (
 
 __all__ = [
     "TIMELINE_TYPES",
+    "Explanation",
     "KeywordMatch",
     "RecallEngine",
     "RecallResult",
+    "explain_result",
+    "explain_results",
     "extract_text_fields",
     "score_record",
     "search_commitments",
