@@ -59,10 +59,7 @@ class JSONStore(MemoryStore):
         return decode_record(record_type, payload)
 
     def list_records(self, record_type: str | None = None) -> list[BaseRecord]:
-        if record_type is not None:
-            type_names = [record_type]
-        else:
-            type_names = sorted(self._data)
+        type_names = [record_type] if record_type is not None else sorted(self._data)
         records: list[BaseRecord] = []
         for name in type_names:
             for record_id in sorted(self._data.get(name, {})):
