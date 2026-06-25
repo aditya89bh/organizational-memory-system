@@ -1,0 +1,17 @@
+[
+  {
+    "id": "m1",
+    "started_at": "2026-02-02T09:00:00Z",
+    "title": "Kickoff"
+  },
+  {
+    "id": "m2",
+    "started_at": "2026-02-10T09:00:00Z",
+    "title": "Planning"
+  },
+  {
+    "id": "m3",
+    "started_at": "2026-02-20T09:00:00Z",
+    "title": "Review"
+  }
+]

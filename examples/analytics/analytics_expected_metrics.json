@@ -1,0 +1,44 @@
+{
+  "commitment_completion": {
+    "completed": 1,
+    "completion_rate": 0.333333,
+    "open": 2,
+    "total": 3
+  },
+  "decision_velocity": {
+    "active": 2,
+    "by_owner": {
+      "alice": 2,
+      "bob": 1
+    },
+    "per_week": {
+      "2026-W06": 2,
+      "2026-W07": 1
+    },
+    "superseded": 1,
+    "total": 3
+  },
+  "memory_health": {
+    "grade": "D",
+    "score": 65.0
+  },
+  "now": "2026-03-01T00:00:00Z",
+  "open_loops": {
+    "resolved": 1,
+    "total": 4,
+    "unresolved": 3
+  },
+  "overdue": {
+    "commitments": 1,
+    "open_loops": 0,
+    "tasks": 1,
+    "total": 2
+  },
+  "report_summary": {
+    "commitments": 3,
+    "decisions": 3,
+    "health_grade": "D",
+    "open_loops": 4,
+    "overdue": 2
+  }
+}
