@@ -1,0 +1,11 @@
+Ingested examples/transcripts/startup_product_meeting.txt
+  participants: 3
+  decisions: 1
+  commitments: 2
+  tasks: 2
+  open_loops: 2
+  dependencies: 1
+  risks: 1
+  action_items: 4
+  topics: 0
+  total records: 16

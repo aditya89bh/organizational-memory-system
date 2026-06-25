@@ -1,0 +1,4 @@
+3 result(s); showing 1-3
+1. [Decision] startup-decision-1 (score 1.0) — We decided to delay the launch to next month.
+2. [Dependency] startup-dependency-1 (score 1.0) — The launch is blocked by the security review.
+3. [DiscussionTopic] startup-topic-2 (score 1.0) — Launch delay

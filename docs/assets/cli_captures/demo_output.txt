@@ -1,0 +1,18 @@
+Startup meeting demo
+
+Extraction
+==========
+participants: 3
+decisions: 1
+commitments: 1
+tasks: 1
+open loops: 1
+risks: 1
+
+Follow-up report
+================
+title: Follow-up report
+blocked_records: 1
+needs_action: 2
+overdue: 0
+unanswered_questions: 1

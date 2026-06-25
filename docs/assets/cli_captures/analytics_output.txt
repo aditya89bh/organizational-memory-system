@@ -1,0 +1,20 @@
+Analytics summary
+  decisions: 1
+  commitments: 1
+  open_loops: 1
+  overdue: 0
+  health_grade: C
+Memory health
+  score: 75.29
+  grade: C
+  recommendations:
+    - Resolve outstanding open loops to reduce unresolved load.
+Bottlenecks
+  overloaded_owners: {}
+  recurring_unresolved: 0
+  blocked_records: ['Rahul']
+  low_signal_meetings: []
+Owner load
+  Aditya: 1
+  Priya: 2
+  unattributed: 1
