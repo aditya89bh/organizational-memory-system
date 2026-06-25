@@ -1,5 +1,7 @@
 # Documentation index
 
+**Version 0.1.0** — see the [release notes](releases/v0.1.0.md).
+
 A complete map of the documentation for the Organizational Memory System — a
 local, deterministic toolkit that turns meeting text into structured memory. No
 network calls, no external models, no embeddings.

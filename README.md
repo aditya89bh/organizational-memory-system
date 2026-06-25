@@ -1,5 +1,9 @@
 # Organizational Memory System
 
+**Version 0.1.0** · Local, deterministic organizational-memory toolkit · No
+network calls, no external models. See the
+[release notes](docs/releases/v0.1.0.md).
+
 > Convert meetings, conversations, and notes into structured organizational
 > memory consisting of decisions, commitments, tasks, and open loops.
 
