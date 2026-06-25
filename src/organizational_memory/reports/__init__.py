@@ -22,6 +22,14 @@ from organizational_memory.reports.organizational_memory_report import (
     organizational_memory_report,
 )
 from organizational_memory.reports.participant_report import participant_report
+from organizational_memory.reports.templates import (
+    executive_summary,
+    follow_up_memo,
+    meeting_summary_template,
+    open_loop_review,
+    select_sections,
+    weekly_review,
+)
 from organizational_memory.reports.timeline_report import timeline_report
 from organizational_memory.reports.weekly_report import weekly_report
 
@@ -32,13 +40,19 @@ __all__ = [
     "accountability_report",
     "commitment_report",
     "decision_report",
+    "executive_summary",
+    "follow_up_memo",
     "follow_up_report",
     "json_safe",
     "meeting_summary",
+    "meeting_summary_template",
     "monthly_report",
     "open_loop_report",
+    "open_loop_review",
     "organizational_memory_report",
     "participant_report",
+    "select_sections",
     "timeline_report",
     "weekly_report",
+    "weekly_review",
 ]
