@@ -1,0 +1,14 @@
+Recall benchmark summary (deterministic hit counts)
+===================================================
+
+Lexical recall over the combined demo memory (41 records from the startup,
+sprint, and board transcripts). Hit counts are deterministic.
+
+query: "launch"    ###              3 hits
+query: "pricing"   ##               2 hits
+
+Corpus size
+  total_records    ####################################  41
+
+Note: recall is purely lexical (tokenize, match, score by coverage with an
+exact-phrase bonus). No embeddings or models are used.

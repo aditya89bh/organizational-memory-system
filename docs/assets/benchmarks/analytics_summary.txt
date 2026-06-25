@@ -1,0 +1,20 @@
+Analytics benchmark summary (deterministic)
+===========================================
+
+Analytics report generated over the combined demo memory (41 records).
+The analytics report is assembled deterministically from persisted records.
+
+summary metric groups   #####            5
+
+Derived analytics include:
+  - memory health score
+  - bottlenecks
+  - owner load / ownership metrics
+  - decision velocity
+  - commitment completion
+  - open loop metrics
+  - overdue tasks
+  - productivity
+
+Note: counts are stable for a fixed input and a fixed reference time
+(--now). Timing is not asserted.

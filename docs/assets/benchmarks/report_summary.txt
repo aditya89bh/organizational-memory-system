@@ -1,0 +1,19 @@
+Report benchmark summary (deterministic)
+========================================
+
+Organizational-memory report generated over the combined demo memory
+(41 records) at a fixed reference time.
+
+report sections   #######          7
+
+Each section renders identically across runs and exports the same content to
+Markdown, JSON, and CSV.
+
+Storage payload (synthetic 200-record benchmark)
+  estimated_json_bytes   57220
+  json_store ops         saved=200 listed=200 total=400
+  sqlite_store ops       saved=200 listed=200 total=400
+  backends_consistent    True
+
+Note: bars and counts are deterministic for fixed inputs; timing is not
+asserted.

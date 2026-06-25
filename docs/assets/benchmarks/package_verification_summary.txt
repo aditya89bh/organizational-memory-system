@@ -1,0 +1,14 @@
+Package verification summary (deterministic)
+============================================
+
+Output of `python scripts/verify_package.py` on a clean tree.
+
+  PASS imports          imported 8 core modules
+  PASS cli_entrypoint   build_parser=True main=True
+  PASS version          version='0.1.0'
+  PASS examples         found 5 bundled examples
+  PASS docs             found 5 key docs
+  PASS pyproject        name=True version=True script=True
+
+All checks PASS. Each check is deterministic and runs locally with no
+network access.
