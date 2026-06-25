@@ -52,6 +52,11 @@ from organizational_memory.analytics.repeated_discussions import (
     RepeatedDiscussionReport,
     repeated_discussions,
 )
+from organizational_memory.analytics.trends import (
+    TrendPoint,
+    TrendReport,
+    trends,
+)
 
 __all__ = [
     "AccountabilityReport",
@@ -70,6 +75,8 @@ __all__ = [
     "OwnershipReport",
     "RepeatedCluster",
     "RepeatedDiscussionReport",
+    "TrendPoint",
+    "TrendReport",
     "accountability",
     "bottlenecks",
     "commitment_completion",
@@ -80,4 +87,5 @@ __all__ = [
     "overdue_tasks",
     "ownership_metrics",
     "repeated_discussions",
+    "trends",
 ]
