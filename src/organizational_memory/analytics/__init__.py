@@ -20,6 +20,12 @@ from organizational_memory.analytics.commitment_completion import (
     CommitmentCompletionReport,
     commitment_completion,
 )
+from organizational_memory.analytics.dashboard import (
+    AnalyticsCard,
+    AnalyticsDashboard,
+    AnalyticsSection,
+    DashboardSnapshot,
+)
 from organizational_memory.analytics.decision_velocity import (
     DecisionVelocityReport,
     decision_velocity,
@@ -73,8 +79,12 @@ from organizational_memory.analytics.trends import (
 
 __all__ = [
     "AccountabilityReport",
+    "AnalyticsCard",
+    "AnalyticsDashboard",
+    "AnalyticsSection",
     "BottleneckReport",
     "CommitmentCompletionReport",
+    "DashboardSnapshot",
     "DecisionVelocityReport",
     "DependencyReport",
     "HealthComponent",
