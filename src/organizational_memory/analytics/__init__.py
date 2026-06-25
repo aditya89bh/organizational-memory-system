@@ -24,6 +24,10 @@ from organizational_memory.analytics.overdue_tasks import (
     OverdueReport,
     overdue_tasks,
 )
+from organizational_memory.analytics.ownership_metrics import (
+    OwnershipReport,
+    ownership_metrics,
+)
 
 __all__ = [
     "CommitmentCompletionReport",
@@ -32,8 +36,10 @@ __all__ = [
     "OpenLoopReport",
     "OverdueItem",
     "OverdueReport",
+    "OwnershipReport",
     "commitment_completion",
     "decision_velocity",
     "open_loop_metrics",
     "overdue_tasks",
+    "ownership_metrics",
 ]
