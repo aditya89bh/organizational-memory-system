@@ -9,9 +9,9 @@ from organizational_memory.storage.indexes import RecordIndexes, build_indexes
 from organizational_memory.storage.json_store import JSONStore
 from organizational_memory.storage.meeting_repository import MeetingRepository
 from organizational_memory.storage.open_loop_repository import OpenLoopRepository
+from organizational_memory.storage.query import Query, apply_query, matches
 from organizational_memory.storage.repository import Repository
 from organizational_memory.storage.sqlite_store import SQLiteStore
-from organizational_memory.storage.task_repository import TaskRepository
 from organizational_memory.storage.store import (
     RECORD_TYPES,
     MemoryStore,
@@ -20,6 +20,7 @@ from organizational_memory.storage.store import (
     record_type_name,
     resolve_record_type,
 )
+from organizational_memory.storage.task_repository import TaskRepository
 
 __all__ = [
     "RECORD_TYPES",
@@ -30,13 +31,16 @@ __all__ = [
     "MeetingRepository",
     "MemoryStore",
     "OpenLoopRepository",
+    "Query",
     "RecordIndexes",
     "Repository",
     "SQLiteStore",
     "TaskRepository",
+    "apply_query",
     "build_indexes",
     "decode_record",
     "encode_record",
+    "matches",
     "record_type_name",
     "resolve_record_type",
 ]
