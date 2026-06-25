@@ -33,6 +33,11 @@ from organizational_memory.analytics.meeting_effectiveness import (
     MeetingEffectivenessReport,
     meeting_effectiveness,
 )
+from organizational_memory.analytics.memory_health import (
+    HealthComponent,
+    MemoryHealthReport,
+    memory_health,
+)
 from organizational_memory.analytics.open_loop_metrics import (
     OpenLoopAge,
     OpenLoopReport,
@@ -72,9 +77,11 @@ __all__ = [
     "CommitmentCompletionReport",
     "DecisionVelocityReport",
     "DependencyReport",
+    "HealthComponent",
     "LowSignalMeeting",
     "MeetingEffectiveness",
     "MeetingEffectivenessReport",
+    "MemoryHealthReport",
     "OpenLoopAge",
     "OpenLoopReport",
     "OverdueItem",
@@ -93,6 +100,7 @@ __all__ = [
     "decision_velocity",
     "dependency_analytics",
     "meeting_effectiveness",
+    "memory_health",
     "open_loop_metrics",
     "overdue_tasks",
     "ownership_metrics",
