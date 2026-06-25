@@ -6,10 +6,12 @@ deterministic: the same report always produces identical output.
 """
 
 from organizational_memory.reports.exporters.base import ReportExporter
+from organizational_memory.reports.exporters.csv import CSVExporter
 from organizational_memory.reports.exporters.json import JSONExporter
 from organizational_memory.reports.exporters.markdown import MarkdownExporter
 
 __all__ = [
+    "CSVExporter",
     "JSONExporter",
     "MarkdownExporter",
     "ReportExporter",
