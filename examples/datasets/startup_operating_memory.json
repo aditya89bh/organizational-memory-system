@@ -1,0 +1,265 @@
+{
+  "records": {
+    "ActionItem": {
+      "startup-actionitem-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will finalize the pricing page.",
+        "due_at": null,
+        "id": "startup-actionitem-1",
+        "metadata": {
+          "confidence": "0.700",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "i will",
+          "segment_id": "seg-4",
+          "source_line": "I will finalize the pricing page."
+        },
+        "owner_id": "Priya",
+        "source_meeting_id": "startup",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-actionitem-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: prepare the investor update.",
+        "due_at": null,
+        "id": "startup-actionitem-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-8",
+          "source_line": "TODO: prepare the investor update."
+        },
+        "owner_id": null,
+        "source_meeting_id": "startup",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Commitment": {
+      "startup-commitment-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will finalize the pricing page.",
+        "due_at": null,
+        "id": "startup-commitment-1",
+        "metadata": {
+          "confidence": "0.700",
+          "extractor": "commitment_extractor",
+          "matched_phrase": "i will",
+          "segment_id": "seg-4",
+          "source_line": "I will finalize the pricing page."
+        },
+        "owner_id": "Priya",
+        "source_meeting_id": "startup",
+        "status": "pending",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Decision": {
+      "startup-decision-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "decided_at": null,
+        "description": "We decided to delay the launch to next month.",
+        "id": "startup-decision-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "decision_extractor",
+          "matched_phrase": "we decided",
+          "segment_id": "seg-3",
+          "source_line": "We decided to delay the launch to next month."
+        },
+        "owner_id": "Aditya",
+        "rationale": null,
+        "source_meeting_id": "startup",
+        "status": "accepted",
+        "title": "We decided to delay the launch to next month.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Dependency": {
+      "startup-dependency-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "dependency_type": "depends_on",
+        "description": "The launch is blocked by the security review.",
+        "id": "startup-dependency-1",
+        "metadata": {
+          "confidence": "0.850",
+          "extractor": "dependency_extractor",
+          "matched_phrase": "blocked by",
+          "segment_id": "seg-5",
+          "source_line": "The launch is blocked by the security review."
+        },
+        "source_id": "Rahul",
+        "status": "pending",
+        "target_id": "the security review",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "DiscussionTopic": {
+      "startup-topic-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "startup-topic-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "topic_extractor",
+          "matched_phrase": "heading",
+          "segment_id": "seg-1",
+          "source_line": "Startup Standup"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "startup",
+        "started_at": null,
+        "summary": null,
+        "title": "Startup Standup",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-topic-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "startup-topic-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "topic_extractor",
+          "matched_phrase": "topic:",
+          "segment_id": "seg-9",
+          "source_line": "Topic: Launch delay"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "startup",
+        "started_at": null,
+        "summary": null,
+        "title": "Launch delay",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Meeting": {
+      "startup": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "startup",
+        "metadata": {},
+        "participants": [
+          "Aditya",
+          "Priya",
+          "Rahul"
+        ],
+        "source": "demo",
+        "started_at": "2026-02-24T09:00:00Z",
+        "title": "Startup Standup",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "OpenLoop": {
+      "startup-openloop-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "due_at": null,
+        "id": "startup-openloop-1",
+        "metadata": {
+          "confidence": "0.650",
+          "extractor": "question_extractor",
+          "matched_phrase": "?",
+          "segment_id": "seg-6",
+          "source_line": "What is our runway?"
+        },
+        "owner_id": "Aditya",
+        "question": "What is our runway?",
+        "source_meeting_id": "startup",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Participant": {
+      "startup-participant-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "startup-participant-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul"
+        },
+        "name": "Aditya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-participant-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "startup-participant-2",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul"
+        },
+        "name": "Priya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-participant-3": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "startup-participant-3",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul"
+        },
+        "name": "Rahul",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Risk": {
+      "startup-risk-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "Risk: we might run out of cash before the next round.",
+        "id": "startup-risk-1",
+        "likelihood": "medium",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "risk_extractor",
+          "matched_phrase": "risk:",
+          "segment_id": "seg-7",
+          "source_line": "Risk: we might run out of cash before the next round."
+        },
+        "owner_id": null,
+        "severity": "medium",
+        "source_meeting_id": "startup",
+        "status": "identified",
+        "title": "Risk: we might run out of cash before the next round.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Task": {
+      "startup-task-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: prepare the investor update.",
+        "due_at": null,
+        "id": "startup-task-1",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "task_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-8",
+          "source_line": "TODO: prepare the investor update."
+        },
+        "owner_id": "unattributed",
+        "priority": "medium",
+        "source_meeting_id": "startup",
+        "status": "todo",
+        "title": "TODO: prepare the investor update.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,980 @@
+{
+  "records": {
+    "ActionItem": {
+      "allhands-actionitem-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will own the website redesign.",
+        "due_at": null,
+        "id": "allhands-actionitem-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "i will own",
+          "segment_id": "seg-4",
+          "source_line": "I will own the website redesign."
+        },
+        "owner_id": "Priya",
+        "source_meeting_id": "allhands",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "allhands-actionitem-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: publish the updated roadmap.",
+        "due_at": null,
+        "id": "allhands-actionitem-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-7",
+          "source_line": "TODO: publish the updated roadmap."
+        },
+        "owner_id": null,
+        "source_meeting_id": "allhands",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-actionitem-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will own the migration to the new runners.",
+        "due_at": null,
+        "id": "sprint-actionitem-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "i will own",
+          "segment_id": "seg-4",
+          "source_line": "I will own the migration to the new runners."
+        },
+        "owner_id": "Sam",
+        "source_meeting_id": "sprint",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-actionitem-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will write the regression tests.",
+        "due_at": null,
+        "id": "sprint-actionitem-2",
+        "metadata": {
+          "confidence": "0.700",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "i will",
+          "segment_id": "seg-5",
+          "source_line": "I will write the regression tests."
+        },
+        "owner_id": "Dana",
+        "source_meeting_id": "sprint",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-actionitem-3": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: update the deployment runbook.",
+        "due_at": null,
+        "id": "sprint-actionitem-3",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-8",
+          "source_line": "TODO: update the deployment runbook."
+        },
+        "owner_id": null,
+        "source_meeting_id": "sprint",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-actionitem-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will finalize the pricing page.",
+        "due_at": null,
+        "id": "startup-actionitem-1",
+        "metadata": {
+          "confidence": "0.700",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "i will",
+          "segment_id": "seg-4",
+          "source_line": "I will finalize the pricing page."
+        },
+        "owner_id": "Priya",
+        "source_meeting_id": "startup",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-actionitem-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: prepare the investor update.",
+        "due_at": null,
+        "id": "startup-actionitem-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "action_item_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-8",
+          "source_line": "TODO: prepare the investor update."
+        },
+        "owner_id": null,
+        "source_meeting_id": "startup",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Commitment": {
+      "allhands-commitment-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will own the website redesign.",
+        "due_at": null,
+        "id": "allhands-commitment-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "commitment_extractor",
+          "matched_phrase": "i will own",
+          "segment_id": "seg-4",
+          "source_line": "I will own the website redesign."
+        },
+        "owner_id": "Priya",
+        "source_meeting_id": "allhands",
+        "status": "pending",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "allhands-overdue-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "Ship the website redesign mockups",
+        "due_at": "2026-02-25T09:00:00Z",
+        "id": "allhands-overdue-1",
+        "metadata": {},
+        "owner_id": "Priya",
+        "source_meeting_id": "allhands",
+        "status": "pending",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-commitment-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will own the migration to the new runners.",
+        "due_at": null,
+        "id": "sprint-commitment-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "commitment_extractor",
+          "matched_phrase": "i will own",
+          "segment_id": "seg-4",
+          "source_line": "I will own the migration to the new runners."
+        },
+        "owner_id": "Sam",
+        "source_meeting_id": "sprint",
+        "status": "pending",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-commitment-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will write the regression tests.",
+        "due_at": null,
+        "id": "sprint-commitment-2",
+        "metadata": {
+          "confidence": "0.700",
+          "extractor": "commitment_extractor",
+          "matched_phrase": "i will",
+          "segment_id": "seg-5",
+          "source_line": "I will write the regression tests."
+        },
+        "owner_id": "Dana",
+        "source_meeting_id": "sprint",
+        "status": "pending",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-commitment-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "I will finalize the pricing page.",
+        "due_at": null,
+        "id": "startup-commitment-1",
+        "metadata": {
+          "confidence": "0.700",
+          "extractor": "commitment_extractor",
+          "matched_phrase": "i will",
+          "segment_id": "seg-4",
+          "source_line": "I will finalize the pricing page."
+        },
+        "owner_id": "Priya",
+        "source_meeting_id": "startup",
+        "status": "pending",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Decision": {
+      "allhands-decision-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "decided_at": null,
+        "description": "We decided to delay the launch due to the security review.",
+        "id": "allhands-decision-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "decision_extractor",
+          "matched_phrase": "we decided",
+          "segment_id": "seg-3",
+          "source_line": "We decided to delay the launch due to the security review."
+        },
+        "owner_id": "Aditya",
+        "rationale": null,
+        "source_meeting_id": "allhands",
+        "status": "accepted",
+        "title": "We decided to delay the launch due to the security review.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-decision-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "decided_at": null,
+        "description": "We decided to expand into the European market.",
+        "id": "board-decision-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "decision_extractor",
+          "matched_phrase": "we decided",
+          "segment_id": "seg-3",
+          "source_line": "We decided to expand into the European market."
+        },
+        "owner_id": "Aditya",
+        "rationale": null,
+        "source_meeting_id": "board",
+        "status": "accepted",
+        "title": "We decided to expand into the European market.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-decision-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "decided_at": null,
+        "description": "We decided to hire a new head of sales.",
+        "id": "board-decision-2",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "decision_extractor",
+          "matched_phrase": "we decided",
+          "segment_id": "seg-4",
+          "source_line": "We decided to hire a new head of sales."
+        },
+        "owner_id": "Lena",
+        "rationale": null,
+        "source_meeting_id": "board",
+        "status": "accepted",
+        "title": "We decided to hire a new head of sales.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-decision-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "decided_at": null,
+        "description": "We decided to adopt the new CI pipeline.",
+        "id": "sprint-decision-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "decision_extractor",
+          "matched_phrase": "we decided",
+          "segment_id": "seg-3",
+          "source_line": "We decided to adopt the new CI pipeline."
+        },
+        "owner_id": "Maria",
+        "rationale": null,
+        "source_meeting_id": "sprint",
+        "status": "accepted",
+        "title": "We decided to adopt the new CI pipeline.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-decision-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "decided_at": null,
+        "description": "We decided to delay the launch to next month.",
+        "id": "startup-decision-1",
+        "metadata": {
+          "confidence": "0.900",
+          "extractor": "decision_extractor",
+          "matched_phrase": "we decided",
+          "segment_id": "seg-3",
+          "source_line": "We decided to delay the launch to next month."
+        },
+        "owner_id": "Aditya",
+        "rationale": null,
+        "source_meeting_id": "startup",
+        "status": "accepted",
+        "title": "We decided to delay the launch to next month.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Dependency": {
+      "allhands-dependency-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "dependency_type": "depends_on",
+        "description": "The redesign is blocked by the branding decision.",
+        "id": "allhands-dependency-1",
+        "metadata": {
+          "confidence": "0.850",
+          "extractor": "dependency_extractor",
+          "matched_phrase": "blocked by",
+          "segment_id": "seg-5",
+          "source_line": "The redesign is blocked by the branding decision."
+        },
+        "source_id": "Rahul",
+        "status": "pending",
+        "target_id": "the branding decision",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-dependency-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "dependency_type": "depends_on",
+        "description": "The expansion is blocked by regulatory approval.",
+        "id": "board-dependency-1",
+        "metadata": {
+          "confidence": "0.850",
+          "extractor": "dependency_extractor",
+          "matched_phrase": "blocked by",
+          "segment_id": "seg-5",
+          "source_line": "The expansion is blocked by regulatory approval."
+        },
+        "source_id": "Marcus",
+        "status": "pending",
+        "target_id": "regulatory approval",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-dependency-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "dependency_type": "depends_on",
+        "description": "The rollout is blocked by the staging outage.",
+        "id": "sprint-dependency-1",
+        "metadata": {
+          "confidence": "0.850",
+          "extractor": "dependency_extractor",
+          "matched_phrase": "blocked by",
+          "segment_id": "seg-6",
+          "source_line": "The rollout is blocked by the staging outage."
+        },
+        "source_id": "Maria",
+        "status": "pending",
+        "target_id": "the staging outage",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-dependency-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "dependency_type": "depends_on",
+        "description": "The launch is blocked by the security review.",
+        "id": "startup-dependency-1",
+        "metadata": {
+          "confidence": "0.850",
+          "extractor": "dependency_extractor",
+          "matched_phrase": "blocked by",
+          "segment_id": "seg-5",
+          "source_line": "The launch is blocked by the security review."
+        },
+        "source_id": "Rahul",
+        "status": "pending",
+        "target_id": "the security review",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "DiscussionTopic": {
+      "allhands-topic-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "allhands-topic-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "topic_extractor",
+          "matched_phrase": "heading",
+          "segment_id": "seg-1",
+          "source_line": "Company All-Hands"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "allhands",
+        "started_at": null,
+        "summary": null,
+        "title": "Company All-Hands",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "allhands-topic-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "allhands-topic-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "topic_extractor",
+          "matched_phrase": "topic:",
+          "segment_id": "seg-8",
+          "source_line": "Topic: Launch delay"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "allhands",
+        "started_at": null,
+        "summary": null,
+        "title": "Launch delay",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-topic-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "board-topic-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "topic_extractor",
+          "matched_phrase": "heading",
+          "segment_id": "seg-1",
+          "source_line": "Board Review"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "board",
+        "started_at": null,
+        "summary": null,
+        "title": "Board Review",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-topic-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "board-topic-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "topic_extractor",
+          "matched_phrase": "topic:",
+          "segment_id": "seg-9",
+          "source_line": "Topic: Market expansion"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "board",
+        "started_at": null,
+        "summary": null,
+        "title": "Market expansion",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-topic-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "sprint-topic-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "topic_extractor",
+          "matched_phrase": "heading",
+          "segment_id": "seg-1",
+          "source_line": "Sprint Planning"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "sprint",
+        "started_at": null,
+        "summary": null,
+        "title": "Sprint Planning",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-topic-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "sprint-topic-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "topic_extractor",
+          "matched_phrase": "topic:",
+          "segment_id": "seg-9",
+          "source_line": "Topic: Sprint scope"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "sprint",
+        "started_at": null,
+        "summary": null,
+        "title": "Sprint scope",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-topic-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "startup-topic-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "topic_extractor",
+          "matched_phrase": "heading",
+          "segment_id": "seg-1",
+          "source_line": "Startup Standup"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "startup",
+        "started_at": null,
+        "summary": null,
+        "title": "Startup Standup",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-topic-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "startup-topic-2",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "topic_extractor",
+          "matched_phrase": "topic:",
+          "segment_id": "seg-9",
+          "source_line": "Topic: Launch delay"
+        },
+        "participant_ids": [],
+        "source_meeting_id": "startup",
+        "started_at": null,
+        "summary": null,
+        "title": "Launch delay",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Meeting": {
+      "allhands": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "allhands",
+        "metadata": {},
+        "participants": [
+          "Aditya",
+          "Priya",
+          "Rahul",
+          "Dana"
+        ],
+        "source": "demo",
+        "started_at": "2026-02-24T09:00:00Z",
+        "title": "Company All-Hands",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "board",
+        "metadata": {},
+        "participants": [
+          "Aditya",
+          "Lena",
+          "Marcus"
+        ],
+        "source": "demo",
+        "started_at": "2026-02-24T09:00:00Z",
+        "title": "Board Review",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "sprint",
+        "metadata": {},
+        "participants": [
+          "Maria",
+          "Sam",
+          "Dana"
+        ],
+        "source": "demo",
+        "started_at": "2026-02-24T09:00:00Z",
+        "title": "Sprint Planning",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "ended_at": null,
+        "id": "startup",
+        "metadata": {},
+        "participants": [
+          "Aditya",
+          "Priya",
+          "Rahul"
+        ],
+        "source": "demo",
+        "started_at": "2026-02-24T09:00:00Z",
+        "title": "Startup Standup",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "OpenLoop": {
+      "allhands-openloop-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "due_at": null,
+        "id": "allhands-openloop-1",
+        "metadata": {
+          "confidence": "0.650",
+          "extractor": "question_extractor",
+          "matched_phrase": "?",
+          "segment_id": "seg-6",
+          "source_line": "What is the final launch date?"
+        },
+        "owner_id": "Dana",
+        "question": "What is the final launch date?",
+        "source_meeting_id": "allhands",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-openloop-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "due_at": null,
+        "id": "board-openloop-1",
+        "metadata": {
+          "confidence": "0.650",
+          "extractor": "question_extractor",
+          "matched_phrase": "?",
+          "segment_id": "seg-6",
+          "source_line": "What is our compliance timeline?"
+        },
+        "owner_id": "Aditya",
+        "question": "What is our compliance timeline?",
+        "source_meeting_id": "board",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-openloop-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "due_at": null,
+        "id": "sprint-openloop-1",
+        "metadata": {
+          "confidence": "0.650",
+          "extractor": "question_extractor",
+          "matched_phrase": "?",
+          "segment_id": "seg-7",
+          "source_line": "Who signs off on the release?"
+        },
+        "owner_id": "Sam",
+        "question": "Who signs off on the release?",
+        "source_meeting_id": "sprint",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-openloop-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "due_at": null,
+        "id": "startup-openloop-1",
+        "metadata": {
+          "confidence": "0.650",
+          "extractor": "question_extractor",
+          "matched_phrase": "?",
+          "segment_id": "seg-6",
+          "source_line": "What is our runway?"
+        },
+        "owner_id": "Aditya",
+        "question": "What is our runway?",
+        "source_meeting_id": "startup",
+        "status": "open",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Participant": {
+      "allhands-participant-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "allhands-participant-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul, Dana"
+        },
+        "name": "Aditya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "allhands-participant-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "allhands-participant-2",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul, Dana"
+        },
+        "name": "Priya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "allhands-participant-3": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "allhands-participant-3",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul, Dana"
+        },
+        "name": "Rahul",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "allhands-participant-4": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "allhands-participant-4",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul, Dana"
+        },
+        "name": "Dana",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-participant-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "board-participant-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Lena, Marcus"
+        },
+        "name": "Aditya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-participant-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "board-participant-2",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Lena, Marcus"
+        },
+        "name": "Lena",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-participant-3": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "board-participant-3",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Lena, Marcus"
+        },
+        "name": "Marcus",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-participant-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "sprint-participant-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Maria, Sam, Dana"
+        },
+        "name": "Maria",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-participant-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "sprint-participant-2",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Maria, Sam, Dana"
+        },
+        "name": "Sam",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-participant-3": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "sprint-participant-3",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Maria, Sam, Dana"
+        },
+        "name": "Dana",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-participant-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "startup-participant-1",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul"
+        },
+        "name": "Aditya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-participant-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "startup-participant-2",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul"
+        },
+        "name": "Priya",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-participant-3": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "email": null,
+        "id": "startup-participant-3",
+        "metadata": {
+          "confidence": "0.750",
+          "extractor": "participant_extractor",
+          "matched_phrase": "attendee_line",
+          "segment_id": "seg-2",
+          "source_line": "Attendees: Aditya, Priya, Rahul"
+        },
+        "name": "Rahul",
+        "organization": null,
+        "role": null,
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Risk": {
+      "board-risk-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "Risk: currency exposure could reduce margins.",
+        "id": "board-risk-1",
+        "likelihood": "medium",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "risk_extractor",
+          "matched_phrase": "risk:",
+          "segment_id": "seg-7",
+          "source_line": "Risk: currency exposure could reduce margins."
+        },
+        "owner_id": null,
+        "severity": "medium",
+        "source_meeting_id": "board",
+        "status": "identified",
+        "title": "Risk: currency exposure could reduce margins.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "board-risk-2": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "Risk: hiring delays may slow the expansion.",
+        "id": "board-risk-2",
+        "likelihood": "medium",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "risk_extractor",
+          "matched_phrase": "risk:",
+          "segment_id": "seg-8",
+          "source_line": "Risk: hiring delays may slow the expansion."
+        },
+        "owner_id": null,
+        "severity": "medium",
+        "source_meeting_id": "board",
+        "status": "identified",
+        "title": "Risk: hiring delays may slow the expansion.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-risk-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "Risk: we might run out of cash before the next round.",
+        "id": "startup-risk-1",
+        "likelihood": "medium",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "risk_extractor",
+          "matched_phrase": "risk:",
+          "segment_id": "seg-7",
+          "source_line": "Risk: we might run out of cash before the next round."
+        },
+        "owner_id": null,
+        "severity": "medium",
+        "source_meeting_id": "startup",
+        "status": "identified",
+        "title": "Risk: we might run out of cash before the next round.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    },
+    "Task": {
+      "allhands-task-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: publish the updated roadmap.",
+        "due_at": null,
+        "id": "allhands-task-1",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "task_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-7",
+          "source_line": "TODO: publish the updated roadmap."
+        },
+        "owner_id": "unattributed",
+        "priority": "medium",
+        "source_meeting_id": "allhands",
+        "status": "todo",
+        "title": "TODO: publish the updated roadmap.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "sprint-task-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: update the deployment runbook.",
+        "due_at": null,
+        "id": "sprint-task-1",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "task_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-8",
+          "source_line": "TODO: update the deployment runbook."
+        },
+        "owner_id": "unattributed",
+        "priority": "medium",
+        "source_meeting_id": "sprint",
+        "status": "todo",
+        "title": "TODO: update the deployment runbook.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      },
+      "startup-task-1": {
+        "created_at": "2026-02-24T09:00:00Z",
+        "description": "TODO: prepare the investor update.",
+        "due_at": null,
+        "id": "startup-task-1",
+        "metadata": {
+          "confidence": "0.950",
+          "extractor": "task_extractor",
+          "matched_phrase": "todo:",
+          "segment_id": "seg-8",
+          "source_line": "TODO: prepare the investor update."
+        },
+        "owner_id": "unattributed",
+        "priority": "medium",
+        "source_meeting_id": "startup",
+        "status": "todo",
+        "title": "TODO: prepare the investor update.",
+        "updated_at": "2026-02-24T09:00:00Z"
+      }
+    }
+  }
+}
