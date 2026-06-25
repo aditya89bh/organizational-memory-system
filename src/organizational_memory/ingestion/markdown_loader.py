@@ -69,8 +69,13 @@ def load_markdown_from_string(text: str, *, source: str | None = None) -> Transc
 
 def load_markdown_from_file(path: str | Path) -> Transcript:
     """Load a markdown :class:`Transcript` from a UTF-8 file."""
+    from organizational_memory.extraction.errors import UnreadableSourceError
+
     file_path = Path(path)
-    text = file_path.read_text(encoding=ENCODING)
+    try:
+        text = file_path.read_text(encoding=ENCODING)
+    except OSError as error:
+        raise UnreadableSourceError(f"cannot read markdown: {file_path}") from error
     return Transcript(
         text=text,
         source=str(file_path),

@@ -5,10 +5,10 @@ from dataclasses import dataclass, field
 from organizational_memory.extraction.action_item_extractor import (
     extract_action_items,
 )
+from organizational_memory.extraction.audit import ExtractionTrace, build_traces
 from organizational_memory.extraction.commitment_extractor import (
     extract_commitments,
 )
-from organizational_memory.extraction.audit import ExtractionTrace, build_traces
 from organizational_memory.extraction.confidence import annotate_confidence
 from organizational_memory.extraction.decision_extractor import extract_decisions
 from organizational_memory.extraction.dependency_extractor import (
@@ -17,6 +17,10 @@ from organizational_memory.extraction.dependency_extractor import (
 from organizational_memory.extraction.entities import (
     ExtractedEntities,
     extract_entities,
+)
+from organizational_memory.extraction.errors import (
+    EmptyTranscriptError,
+    UnsupportedInputError,
 )
 from organizational_memory.extraction.normalization import normalize_text
 from organizational_memory.extraction.participant_extractor import (
@@ -65,12 +69,18 @@ class ExtractionResult:
 def _as_transcript(source: Transcript | str) -> Transcript:
     if isinstance(source, Transcript):
         return source
-    return Transcript(text=source)
+    if isinstance(source, str):
+        return Transcript(text=source)
+    raise UnsupportedInputError(
+        f"unsupported extraction input type: {type(source).__name__}"
+    )
 
 
 def run_extraction(source: Transcript | str) -> ExtractionResult:
     """Run the full deterministic extraction pipeline over ``source``."""
     transcript = _as_transcript(source)
+    if transcript.is_empty:
+        raise EmptyTranscriptError("transcript has no extractable content")
     text = normalize_text(transcript.text)
     segments = segment_text(text)
     result = ExtractionResult(
