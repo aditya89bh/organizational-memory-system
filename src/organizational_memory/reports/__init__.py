@@ -5,6 +5,7 @@ deterministic, reproducible reports and exports (Markdown, JSON, CSV). It uses n
 LLMs, embeddings, external APIs, or network calls.
 """
 
+from organizational_memory.reports.accountability_report import accountability_report
 from organizational_memory.reports.base import (
     Report,
     ReportSection,
@@ -24,6 +25,7 @@ __all__ = [
     "Report",
     "ReportSection",
     "ReportTable",
+    "accountability_report",
     "commitment_report",
     "decision_report",
     "json_safe",
