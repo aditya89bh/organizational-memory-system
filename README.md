@@ -176,6 +176,26 @@ print(health.score, health.grade)
 See [docs/analytics_metrics.md](docs/analytics_metrics.md) for each metric, its
 formula, inputs, limitations, and example output.
 
+## Workflow intelligence
+
+Phase 6 layers workflow intelligence over the stored memory: composite
+**bottleneck** detection (overloaded owners, recurring unresolved topics, blocked
+records, low-signal meetings), **accountability** scoring, **repeated discussion**
+detection, an overall **memory health** score with recommendations, structured
+**reports**, JSON-safe **dashboard snapshots**, and text-only **visualizations**.
+It remains fully deterministic and makes no predictive claims.
+
+```python
+from organizational_memory.analytics import bottlenecks, build_dashboard_snapshot
+
+snapshot = build_dashboard_snapshot(store)
+hotspots = bottlenecks(store)
+```
+
+See [docs/workflow_intelligence.md](docs/workflow_intelligence.md) for the
+analytics architecture, how analytics use memory records, and the full set of
+limitations.
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
@@ -186,10 +206,14 @@ formula, inputs, limitations, and example output.
   extraction of structured records from transcripts and notes.
 - **Phase 4 — Storage**: persist and retrieve structured records via
   JSON and SQLite stores, repositories, queries, snapshots, and backups.
-- **Phase 5 — Recall & query engine** *(current)*: deterministic search,
+- **Phase 5 — Recall & query engine**: deterministic search,
   ranking, explanations, traces, pagination, query parsing, and
   natural-language-like recall over the stored memory.
-- **Phase 6 — Reporting**: generate digests and reports across the memory.
+- **Phase 6 — Workflow intelligence & analytics** *(current)*: deterministic
+  metrics for decision velocity, commitment completion, open loop aging, overdue
+  work, ownership, meeting effectiveness, repeated discussions, dependencies,
+  bottlenecks, accountability, trends, timeline activity, productivity, and an
+  overall memory health score, with reports, dashboards, and visualizations.
 
 ## License
 
