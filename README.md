@@ -196,6 +196,28 @@ See [docs/workflow_intelligence.md](docs/workflow_intelligence.md) for the
 analytics architecture, how analytics use memory records, and the full set of
 limitations.
 
+## Reporting
+
+Phase 7 turns persisted memory, recall results, and analytics into deterministic
+local reports: meeting summaries, decision/commitment/open-loop reports, weekly
+and monthly reports, timeline, participant, accountability, organizational
+memory, and follow-up reports. Reports share a common section/table model and can
+be exported to Markdown, JSON, and CSV. Reusable templates and text-only
+visualizations are included. Reports are reproducible from explicit inputs and
+make no predictive or business-intelligence claims.
+
+```python
+from organizational_memory.reports import weekly_report
+from organizational_memory.reports.exporters.markdown import MarkdownExporter
+
+report = weekly_report(store, start=start, end=end)
+markdown = MarkdownExporter().export(report)
+```
+
+See [docs/reporting_walkthrough.md](docs/reporting_walkthrough.md) for how to
+generate each report, export to Markdown/JSON/CSV, and the limitations. Sample
+outputs live under [docs/assets/](docs/assets/).
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
@@ -209,11 +231,16 @@ limitations.
 - **Phase 5 — Recall & query engine**: deterministic search,
   ranking, explanations, traces, pagination, query parsing, and
   natural-language-like recall over the stored memory.
-- **Phase 6 — Workflow intelligence & analytics** *(current)*: deterministic
+- **Phase 6 — Workflow intelligence & analytics**: deterministic
   metrics for decision velocity, commitment completion, open loop aging, overdue
   work, ownership, meeting effectiveness, repeated discussions, dependencies,
   bottlenecks, accountability, trends, timeline activity, productivity, and an
   overall memory health score, with reports, dashboards, and visualizations.
+- **Phase 7 — Reports & organizational memory products** *(current)*:
+  deterministic report generation (meeting, decision, commitment, open-loop,
+  weekly, monthly, timeline, participant, accountability, organizational memory,
+  and follow-up reports), Markdown/JSON/CSV exporters, reusable templates, and
+  text-only report visualizations.
 
 ## License
 
