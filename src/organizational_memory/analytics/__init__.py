@@ -6,6 +6,11 @@ overall memory health. It uses no LLMs, embeddings, external APIs, or network
 calls.
 """
 
+from organizational_memory.analytics.accountability import (
+    AccountabilityReport,
+    OwnerAccountability,
+    accountability,
+)
 from organizational_memory.analytics.bottlenecks import (
     BottleneckReport,
     LowSignalMeeting,
@@ -49,6 +54,7 @@ from organizational_memory.analytics.repeated_discussions import (
 )
 
 __all__ = [
+    "AccountabilityReport",
     "BottleneckReport",
     "CommitmentCompletionReport",
     "DecisionVelocityReport",
@@ -60,9 +66,11 @@ __all__ = [
     "OpenLoopReport",
     "OverdueItem",
     "OverdueReport",
+    "OwnerAccountability",
     "OwnershipReport",
     "RepeatedCluster",
     "RepeatedDiscussionReport",
+    "accountability",
     "bottlenecks",
     "commitment_completion",
     "decision_velocity",
