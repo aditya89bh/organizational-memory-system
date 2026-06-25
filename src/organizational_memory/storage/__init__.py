@@ -15,6 +15,12 @@ from organizational_memory.storage.event_repository import EventRepository
 from organizational_memory.storage.indexes import RecordIndexes, build_indexes
 from organizational_memory.storage.json_store import JSONStore
 from organizational_memory.storage.meeting_repository import MeetingRepository
+from organizational_memory.storage.migrations import (
+    LATEST_VERSION,
+    Migration,
+    MigrationError,
+    migrate_snapshot,
+)
 from organizational_memory.storage.open_loop_repository import OpenLoopRepository
 from organizational_memory.storage.query import Query, apply_query, matches
 from organizational_memory.storage.repository import Repository
@@ -37,6 +43,7 @@ from organizational_memory.storage.store import (
 from organizational_memory.storage.task_repository import TaskRepository
 
 __all__ = [
+    "LATEST_VERSION",
     "RECORD_TYPES",
     "CommitmentRepository",
     "DecisionRepository",
@@ -44,6 +51,8 @@ __all__ = [
     "JSONStore",
     "MeetingRepository",
     "MemoryStore",
+    "Migration",
+    "MigrationError",
     "OpenLoopRepository",
     "Query",
     "RecordIndexes",
@@ -60,6 +69,7 @@ __all__ = [
     "latest_backup",
     "list_backups",
     "matches",
+    "migrate_snapshot",
     "prune_backups",
     "read_snapshot",
     "record_type_name",

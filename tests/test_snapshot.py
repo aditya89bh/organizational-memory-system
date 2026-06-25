@@ -73,4 +73,4 @@ def test_write_and_read_snapshot(tmp_path: Path) -> None:
 def test_unsupported_version_raises(tmp_path: Path) -> None:
     store = JSONStore(tmp_path / "memory.json")
     with pytest.raises(ValueError, match="snapshot version"):
-        restore_snapshot(store, {"version": 99, "records": {}})
+        restore_snapshot(store, {"version": 99, "records": {}}, migrate=False)

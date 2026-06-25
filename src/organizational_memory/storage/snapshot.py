@@ -43,12 +43,19 @@ def restore_snapshot(
     snapshot: dict[str, Any],
     *,
     replace: bool = True,
+    migrate: bool = True,
 ) -> int:
     """Load ``snapshot`` into ``store`` and return the number of records written.
 
     When ``replace`` is true the store is cleared first, so it ends up holding
-    exactly the snapshot's contents.
+    exactly the snapshot's contents. When ``migrate`` is true, older snapshots
+    are upgraded to the current version before loading.
     """
+    if migrate and snapshot.get("version") != SNAPSHOT_VERSION:
+        from organizational_memory.storage.migrations import migrate_snapshot
+
+        snapshot = migrate_snapshot(snapshot)
+
     version = snapshot.get("version")
     if version != SNAPSHOT_VERSION:
         raise ValueError(f"unsupported snapshot version: {version!r}")
