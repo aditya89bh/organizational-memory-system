@@ -12,6 +12,7 @@ from organizational_memory.constants import ENCODING
 from organizational_memory.schemas.base import BaseRecord
 from organizational_memory.storage.store import (
     MemoryStore,
+    RecordNotFoundError,
     decode_record,
     encode_record,
 )
@@ -67,6 +68,10 @@ class JSONStore(MemoryStore):
         return records
 
     def update_record(self, record: BaseRecord) -> None:
+        type_name, record_id, _ = encode_record(record)
+        if record_id not in self._data.get(type_name, {}):
+            raise RecordNotFoundError(f"{type_name} {record_id} does not exist")
+        record.touch()
         self.save_record(record)
 
     def delete_record(self, record_type: str, record_id: str) -> bool:

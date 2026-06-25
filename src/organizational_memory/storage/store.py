@@ -9,6 +9,7 @@ shares the same on-disk representation.
 from abc import ABC, abstractmethod
 from typing import Any
 
+from organizational_memory.exceptions import StorageError
 from organizational_memory.models import (
     ActionItem,
     Commitment,
@@ -25,6 +26,10 @@ from organizational_memory.models import (
 from organizational_memory.persistence import from_dict
 from organizational_memory.schemas.base import BaseRecord
 from organizational_memory.storage.query import Query, apply_query
+
+
+class RecordNotFoundError(StorageError):
+    """Raised when an operation targets a record that does not exist."""
 
 RECORD_TYPES: dict[str, type[BaseRecord]] = {
     "ActionItem": ActionItem,

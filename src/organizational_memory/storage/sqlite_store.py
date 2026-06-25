@@ -14,6 +14,7 @@ from typing import Any
 from organizational_memory.schemas.base import BaseRecord
 from organizational_memory.storage.store import (
     MemoryStore,
+    RecordNotFoundError,
     decode_record,
     encode_record,
 )
@@ -95,6 +96,10 @@ class SQLiteStore(MemoryStore):
         return [_row_to_record(row) for row in cursor.fetchall()]
 
     def update_record(self, record: BaseRecord) -> None:
+        type_name, record_id, _ = encode_record(record)
+        if self.get_record(type_name, record_id) is None:
+            raise RecordNotFoundError(f"{type_name} {record_id} does not exist")
+        record.touch()
         self._write(record)
 
     def delete_record(self, record_type: str, record_id: str) -> bool:

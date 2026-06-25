@@ -15,6 +15,7 @@ from organizational_memory.storage.sqlite_store import SQLiteStore
 from organizational_memory.storage.store import (
     RECORD_TYPES,
     MemoryStore,
+    RecordNotFoundError,
     decode_record,
     encode_record,
     record_type_name,
@@ -33,6 +34,7 @@ __all__ = [
     "OpenLoopRepository",
     "Query",
     "RecordIndexes",
+    "RecordNotFoundError",
     "Repository",
     "SQLiteStore",
     "TaskRepository",
