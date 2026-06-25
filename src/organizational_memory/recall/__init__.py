@@ -23,6 +23,11 @@ from organizational_memory.recall.keyword_search import (
     search_keywords,
     tokenize,
 )
+from organizational_memory.recall.metrics import (
+    QueryOutcome,
+    RecallMetrics,
+    compute_metrics,
+)
 from organizational_memory.recall.natural_language import (
     Interpretation,
     answer,
@@ -52,12 +57,15 @@ __all__ = [
     "KeywordMatch",
     "Page",
     "ParsedQuery",
+    "QueryOutcome",
     "RecallEngine",
+    "RecallMetrics",
     "RecallResult",
     "RecallTrace",
     "RecallTraceBuilder",
     "TraceStage",
     "answer",
+    "compute_metrics",
     "explain_result",
     "explain_results",
     "extract_text_fields",
