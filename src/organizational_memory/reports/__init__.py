@@ -14,6 +14,7 @@ from organizational_memory.reports.base import (
 )
 from organizational_memory.reports.commitment_report import commitment_report
 from organizational_memory.reports.decision_report import decision_report
+from organizational_memory.reports.follow_up_report import follow_up_report
 from organizational_memory.reports.meeting_summary import meeting_summary
 from organizational_memory.reports.monthly_report import monthly_report
 from organizational_memory.reports.open_loop_report import open_loop_report
@@ -31,6 +32,7 @@ __all__ = [
     "accountability_report",
     "commitment_report",
     "decision_report",
+    "follow_up_report",
     "json_safe",
     "meeting_summary",
     "monthly_report",
