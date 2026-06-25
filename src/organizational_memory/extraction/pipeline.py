@@ -8,6 +8,7 @@ from organizational_memory.extraction.action_item_extractor import (
 from organizational_memory.extraction.commitment_extractor import (
     extract_commitments,
 )
+from organizational_memory.extraction.audit import ExtractionTrace, build_traces
 from organizational_memory.extraction.confidence import annotate_confidence
 from organizational_memory.extraction.decision_extractor import extract_decisions
 from organizational_memory.extraction.dependency_extractor import (
@@ -58,6 +59,7 @@ class ExtractionResult:
     action_items: list[ActionItem] = field(default_factory=list)
     topics: list[DiscussionTopic] = field(default_factory=list)
     entities: ExtractedEntities = field(default_factory=ExtractedEntities)
+    traces: list[ExtractionTrace] = field(default_factory=list)
 
 
 def _as_transcript(source: Transcript | str) -> Transcript:
@@ -85,7 +87,7 @@ def run_extraction(source: Transcript | str) -> ExtractionResult:
         topics=extract_topics(segments),
         entities=extract_entities(segments, text),
     )
-    for records in (
+    record_groups = (
         result.participants,
         result.decisions,
         result.commitments,
@@ -95,6 +97,8 @@ def run_extraction(source: Transcript | str) -> ExtractionResult:
         result.risks,
         result.action_items,
         result.topics,
-    ):
+    )
+    for records in record_groups:
         annotate_confidence(records)
+        result.traces.extend(build_traces(records))
     return result
