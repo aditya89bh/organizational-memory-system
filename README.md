@@ -101,15 +101,36 @@ print(result.decisions[0].title)
 See [docs/extraction.md](docs/extraction.md) for the full extraction reference,
 configuration options, and known limitations.
 
+## Persistence
+
+The `organizational_memory.storage` package persists records behind a single
+`MemoryStore` interface, with interchangeable **JSON** and **SQLite** backends.
+It provides typed repositories per record type, a declarative `Query` API,
+in-memory indexes, snapshots, timestamped backups, and version-aware
+migrations.
+
+```python
+from organizational_memory.storage import SQLiteStore, Query, DecisionRepository
+
+with SQLiteStore("memory.db") as store:
+    decisions = DecisionRepository(store)
+    decisions.add(decision)
+    open_for_alice = store.query(Query(owner_id="alice", status="open"))
+```
+
+See [docs/persistence.md](docs/persistence.md) for the full storage reference,
+including snapshots, backups, and migrations.
+
 ## Roadmap
 
 - **Phase 1 — Foundation & project setup**: packaging, configuration,
   utilities, base schemas, tooling, and CI.
 - **Phase 2 — Domain model**: concrete schemas for meetings, decisions,
   commitments, tasks, open loops, and related records.
-- **Phase 3 — Information extraction** *(current)*: deterministic, rule-based
+- **Phase 3 — Information extraction**: deterministic, rule-based
   extraction of structured records from transcripts and notes.
-- **Phase 4 — Storage**: persist and retrieve structured records.
+- **Phase 4 — Storage** *(current)*: persist and retrieve structured records via
+  JSON and SQLite stores, repositories, queries, snapshots, and backups.
 - **Phase 5 — Recall & reporting**: query the memory and generate reports.
 
 ## License
