@@ -5,6 +5,7 @@ deterministic search and ranking only. It does not use embeddings, LLMs,
 external APIs, or any network access.
 """
 
+from organizational_memory.recall.commitment_search import search_commitments
 from organizational_memory.recall.decision_search import search_decisions
 from organizational_memory.recall.engine import (
     RecallEngine,
@@ -24,6 +25,7 @@ __all__ = [
     "RecallResult",
     "extract_text_fields",
     "score_record",
+    "search_commitments",
     "search_decisions",
     "search_keywords",
     "tokenize",
