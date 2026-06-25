@@ -372,7 +372,7 @@ Extraction is rule-based and keys off cues like "we decided", "I will", "TODO:",
 
 ## Release status
 
-Current version: **v0.1.0**. See the
+Current version: **v0.1.0** (2026-06-25). See the
 [release notes](docs/releases/v0.1.0.md) and the [changelog](CHANGELOG.md).
 
 ## License

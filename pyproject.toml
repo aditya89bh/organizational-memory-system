@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "organizational-memory"
 version = "0.1.0"
-description = "Convert meetings, conversations, and notes into structured organizational memory."
+description = "Local, deterministic toolkit that converts meetings and notes into structured organizational memory."
 requires-python = ">=3.11"
 readme = "README.md"
 license = "MIT"
@@ -16,16 +16,24 @@ keywords = [
     "meetings",
     "decisions",
     "tasks",
+    "cli",
+    "analytics",
+    "local-first",
+    "deterministic",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
     "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Office/Business",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
     "Typing :: Typed",
 ]
 dependencies = []
