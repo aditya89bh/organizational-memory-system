@@ -8,6 +8,7 @@ from organizational_memory.extraction.action_item_extractor import (
 from organizational_memory.extraction.commitment_extractor import (
     extract_commitments,
 )
+from organizational_memory.extraction.confidence import annotate_confidence
 from organizational_memory.extraction.decision_extractor import extract_decisions
 from organizational_memory.extraction.dependency_extractor import (
     extract_dependencies,
@@ -70,7 +71,7 @@ def run_extraction(source: Transcript | str) -> ExtractionResult:
     transcript = _as_transcript(source)
     text = normalize_text(transcript.text)
     segments = segment_text(text)
-    return ExtractionResult(
+    result = ExtractionResult(
         segments=segments,
         speaker_turns=parse_speaker_turns(text),
         participants=extract_participants(segments),
@@ -84,3 +85,16 @@ def run_extraction(source: Transcript | str) -> ExtractionResult:
         topics=extract_topics(segments),
         entities=extract_entities(segments, text),
     )
+    for records in (
+        result.participants,
+        result.decisions,
+        result.commitments,
+        result.tasks,
+        result.open_loops,
+        result.dependencies,
+        result.risks,
+        result.action_items,
+        result.topics,
+    ):
+        annotate_confidence(records)
+    return result
