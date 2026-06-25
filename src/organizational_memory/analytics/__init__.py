@@ -19,13 +19,21 @@ from organizational_memory.analytics.open_loop_metrics import (
     OpenLoopReport,
     open_loop_metrics,
 )
+from organizational_memory.analytics.overdue_tasks import (
+    OverdueItem,
+    OverdueReport,
+    overdue_tasks,
+)
 
 __all__ = [
     "CommitmentCompletionReport",
     "DecisionVelocityReport",
     "OpenLoopAge",
     "OpenLoopReport",
+    "OverdueItem",
+    "OverdueReport",
     "commitment_completion",
     "decision_velocity",
     "open_loop_metrics",
+    "overdue_tasks",
 ]

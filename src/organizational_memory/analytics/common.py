@@ -94,3 +94,24 @@ def safe_ratio(numerator: int, denominator: int) -> float:
     if denominator == 0:
         return 0.0
     return round(numerator / denominator, 6)
+
+
+def is_overdue(record: BaseRecord, now: datetime) -> bool:
+    """Return whether ``record`` has a past due date and is still open.
+
+    Records without a ``due_at`` are never overdue, and records in a terminal
+    status are excluded even if their due date has passed.
+    """
+    due_at = getattr(record, "due_at", None)
+    if not isinstance(due_at, datetime) or due_at >= now:
+        return False
+    status = getattr(record, "status", None)
+    return status is None or is_open_status(status)
+
+
+def days_overdue(record: BaseRecord, now: datetime) -> float:
+    """Return how many days past due ``record`` is, or ``0.0`` if not overdue."""
+    due_at = getattr(record, "due_at", None)
+    if not isinstance(due_at, datetime) or due_at >= now:
+        return 0.0
+    return round((now - due_at).total_seconds() / 86400.0, 6)
