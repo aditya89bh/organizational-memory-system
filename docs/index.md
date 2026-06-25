@@ -47,16 +47,23 @@ network calls, no external models, no embeddings.
 - [User guide](user_guide.md) — full CLI command reference.
 - [Demos](demos.md) — the bundled, deterministic demonstrations.
 - [Case studies](case_studies.md) — worked examples by meeting type.
+- [Examples gallery](examples_gallery.md) — everything runnable, with commands.
 - [Benchmark visualizations](benchmark_visualizations.md) — text-only summaries.
 
 ## Release and operations
 
+- [Release notes (v0.1.0)](releases/v0.1.0.md) — summary, capabilities, and
+  limitations.
+- [Release checklist](release_checklist.md) — the deterministic release
+  procedure.
 - [Production readiness](production_readiness.md) — what is ready and what is
   local-only.
 - [Security](security.md) — security model, limitations, and disclosure.
 - [Testing](testing.md) — running tests and coverage tooling.
 - [Roadmap](roadmap.md) — completed phases, remaining work, and non-goals.
 - [Changelog](../CHANGELOG.md) — phase-by-phase history.
+- [Release artifacts](../release_artifacts/) — feature summary, CLI reference,
+  demo script, validation summary, and known limitations.
 
 ## API / reference
 

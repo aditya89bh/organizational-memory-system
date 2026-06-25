@@ -92,5 +92,5 @@ git ls-remote --tags origin v0.1.0
 ```
 
 Expected: working tree clean, total commits 225, `v0.1.0` present both locally and
-on `origin`. The [post-release verification script](../scripts/post_release_verification.py)
-automates several of these checks.
+on `origin`. A post-release verification script under `scripts/` automates several
+of these checks.
