@@ -24,6 +24,7 @@ from organizational_memory.models import (
 )
 from organizational_memory.persistence import from_dict
 from organizational_memory.schemas.base import BaseRecord
+from organizational_memory.storage.query import Query, apply_query
 
 RECORD_TYPES: dict[str, type[BaseRecord]] = {
     "ActionItem": ActionItem,
@@ -92,3 +93,13 @@ class MemoryStore(ABC):
     @abstractmethod
     def clear(self) -> None:
         """Remove all records from the store."""
+
+    def query(self, query: Query) -> list[BaseRecord]:
+        """Return records matching ``query``, applying ordering and paging.
+
+        The default implementation loads the candidate records (narrowed by
+        ``record_type`` when set) and filters them in memory, so it behaves
+        identically across every concrete store.
+        """
+        candidates = self.list_records(query.record_type)
+        return apply_query(candidates, query)
