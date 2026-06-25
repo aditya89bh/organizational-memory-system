@@ -47,6 +47,40 @@ When adding new behavior, include unit tests in the `tests/` directory and keep
 the suite green. Public functions and classes should carry clear docstrings, and
 all code must be fully type annotated.
 
+## Testing commands
+
+The core quality gate is `ruff check .`, `mypy .`, and `pytest`. Additional
+local tooling is available:
+
+```bash
+# Coverage (writes coverage.json) and the coverage gate
+pytest --cov --cov-report=json
+python scripts/check_coverage.py --coverage-file coverage.json --min 80
+
+# Benchmarks (informational; no hard timing thresholds)
+python scripts/run_performance_benchmarks.py
+python scripts/run_memory_benchmarks.py
+python scripts/run_load_tests.py
+python scripts/run_stress_tests.py
+
+# Package verification
+python scripts/verify_package.py
+```
+
+See [docs/testing.md](docs/testing.md) for details on coverage configuration.
+
+## Release validation
+
+Before proposing a release, confirm `tests/test_release_validation.py` passes.
+It checks that the package imports, the CLI entry point exists, key docs and
+examples are present, the declared version is consistent, and no forbidden
+attribution strings appear in tracked text files.
+
+```bash
+pytest tests/test_release_validation.py
+python scripts/verify_package.py
+```
+
 ## Commit conventions
 
 We use [Conventional Commits](https://www.conventionalcommits.org/) and keep
@@ -65,6 +99,25 @@ Guidelines:
 - One commit per logical change; avoid large catch-all commits.
 - Write the subject line in the imperative mood (e.g. "add", not "added").
 - Ensure the repository builds and all checks pass after every commit.
+
+### Attribution rules
+
+- Do **not** add co-author trailers or any automated tool attribution to commit
+  messages, commit metadata, code comments, docs, or examples.
+- Author and committer identity must be a real human contributor.
+- The release validation test enforces that tracked text files contain no
+  generated-tool attribution strings.
+
+## Documentation expectations
+
+- Update documentation only for features that actually exist; do not describe
+  unimplemented behavior.
+- Keep the `README.md` accurate and in sync with the CLI and library.
+- Be explicit that this is a local, deterministic toolkit. Do not overclaim
+  production readiness; see
+  [docs/production_readiness.md](docs/production_readiness.md).
+- When you add a user-facing capability, update the relevant guide under `docs/`
+  and the [changelog](CHANGELOG.md).
 
 ## Pull requests
 
