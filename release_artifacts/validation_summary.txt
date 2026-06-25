@@ -1,0 +1,40 @@
+Release validation summary — v0.1.0
+===================================
+
+All checks are local, offline, and deterministic. Reproduce them with the
+commands shown; results do not depend on any network service.
+
+Quality gate
+  [PASS] ruff check .            lint clean
+  [PASS] mypy .                  strict type check, no issues
+  [PASS] pytest                  full deterministic suite passes
+  [PASS] python -m build         builds sdist + wheel
+
+Package verification (python scripts/verify_package.py)
+  [PASS] imports                 core modules import
+  [PASS] cli_entrypoint          build_parser + main present
+  [PASS] version                 0.1.0
+  [PASS] examples                bundled examples present
+  [PASS] docs                    key docs present
+  [PASS] pyproject               name + version + script present
+
+Release validation (python scripts/run_release_validation.py)
+  [PASS] version_consistency     pyproject == module == 0.1.0
+  [PASS] required_docs           all present
+  [PASS] required_examples       all present
+  [PASS] attribution_scan        clean (no tool attribution)
+  [PASS] commit_count            225 at release
+  [PASS] tag_readiness           v0.1.0
+
+Attribution
+  - No co-author trailers, generated-by markers, or assistant/agent strings in
+    tracked text files or recent commit metadata.
+  - All commits authored and committed by Aditya.
+
+To regenerate this summary, run:
+  ruff check .
+  mypy .
+  pytest
+  python -m build
+  python scripts/verify_package.py
+  python scripts/run_release_validation.py
