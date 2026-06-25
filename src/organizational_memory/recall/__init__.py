@@ -18,6 +18,7 @@ from organizational_memory.recall.keyword_search import (
     search_keywords,
     tokenize,
 )
+from organizational_memory.recall.participant_search import search_participants
 from organizational_memory.recall.task_search import search_tasks
 
 __all__ = [
@@ -29,6 +30,7 @@ __all__ = [
     "search_commitments",
     "search_decisions",
     "search_keywords",
+    "search_participants",
     "search_tasks",
     "tokenize",
 ]
